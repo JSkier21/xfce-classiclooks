@@ -1,0 +1,16 @@
+/**************************************************************************************
+This file is distributed under the GNU General Public License version 2 (a.k.a. GPL-v2)
+(c) 2019-2021 Virgil Mager - vvmager@gmail.com
+(c) 2019-2021 Information Technology Group - http://itgroup.ro
+**************************************************************************************/
+
+style "xfdesktop_icon_view" {
+	XfdesktopIconView::label-alpha = 150
+	XfdesktopIconView::shadow-x-offset = 0
+	XfdesktopIconView::shadow-y-offset = 0
+	XfdesktopIconView::selected-label-alpha =200
+#	XfdesktopIconView::shadow-color = "#000000"
+	fg[NORMAL] = @fg_color
+	fg[SELECTED] = @selected_focused_fg_color
+	fg[ACTIVE] = @selected_nofocus_fg_color
+}

@@ -1,0 +1,31 @@
+/**************************************************************************************
+This file is distributed under the GNU General Public License version 2 (a.k.a. GPL-v2)
+(c) 2019-2021 Virgil Mager - vvmager@gmail.com
+(c) 2019-2021 Information Technology Group - http://itgroup.ro
+**************************************************************************************/
+
+button.default:not(:disabled) {
+  color: mix(@fg_color, mix(@shift_bg_color, @fg_color, 0.398), 00.30);
+  text-shadow: 0 1px mix(#e8e8e8, @shift_bg_color, 00.30);
+  outline-color: #777777;
+  border-color: mix(#aaaaaa, @shift_bg_color, 00.30);
+  border-bottom-color: mix(#999999, @shift_bg_color, 00.30);
+  background-image: linear-gradient(to bottom, mix(mix(#ffffff, @shift_bg_color, 0.25), mix(@selected_bg_color, #f4f4f4, 0.65), 0.85), mix(mix(@bg_color, @shift_bg_color, 0.25), mix(@selected_bg_color, #f4f4f4, 0.55), 0.70) 50%, mix(mix(#c0c0c0, @shift_bg_color, 0.25), mix(@selected_bg_color, #f4f4f4, 0.45), 0.60));
+  -gtk-icon-shadow: none;
+  box-shadow: inset 0 1px rgba(255, 255, 255, 0.15), inset 1px 0 rgba(255, 255, 255, 0.1), inset -1px 0 rgba(255, 255, 255, 0.1); }
+  button.default:not(:disabled):hover {
+    color: shade(mix(@fg_color, mix(@shift_bg_color, @fg_color, 0.398), 00.30), 0.7);
+    text-shadow: none;
+    background-image: linear-gradient(to bottom, mix(mix(#ffffff, @shift_bg_color, 0.2), mix(@selected_bg_color, #f2f2f2, 0.70), 0.95), mix(mix(@bg_color, @shift_bg_color, 0.2), mix(@selected_bg_color, #f2f2f2, 0.58), 0.75) 50%, mix(mix(#c0c0c0, @shift_bg_color, 0.2), mix(@selected_bg_color, #f2f2f2, 0.52), 0.55)); }
+  button.default:not(:disabled):active,
+  button.default:not(:disabled):checked {
+    border-color: shade(mix(@default_button_pressed_border_color, shade(mix(@bg_color, @shift_bg_color, 00.30), 1.0), 0.4), 1.0);
+    border-top-color: shade(mix(@default_button_pressed_border_color, shade(mix(@bg_color, @shift_bg_color, 00.30), 1.0), 0.4), 0.99);
+    border-bottom-color: shade(mix(@default_button_pressed_border_color, shade(mix(@bg_color, @shift_bg_color, 00.30), 1.0), 0.4), 1.1);
+    background-image: linear-gradient(to bottom, mix(mix(#ffffff, @shift_bg_color, 0.25), mix(@selected_bg_color, #e8e8e8, 0.65), 0.72), mix(mix(@bg_color, @shift_bg_color, 0.25), mix(@selected_bg_color, #e8e8e8, 0.55), 0.65) 50%, mix(mix(#c4c4c4, @shift_bg_color, 0.25), mix(@selected_bg_color, #e8e8e8, 0.45), 0.65));
+    color: shade(mix(@fg_color, mix(@shift_bg_color, @fg_color, 0.398), 00.30), 0.8);
+    text-shadow: 0 1px mix(#e8e8e8, @shift_bg_color, 00.30);
+    -gtk-icon-shadow: none;
+/*  -gtk-icon-effect: dim;*/
+    -gtk-icon-transform: translate(1px, 1px); /* doesn't seem to work */
+    box-shadow: inset 0px 1px 2px rgba(35, 35, 35, 0.15), 1px 1px rgba(255, 255, 255, 0.4); }

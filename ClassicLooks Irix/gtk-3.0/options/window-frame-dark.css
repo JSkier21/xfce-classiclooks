@@ -1,0 +1,29 @@
+/**************************************************************************************
+This file is distributed under the GNU General Public License version 2 (a.k.a. GPL-v2)
+(c) 2019-2021 Virgil Mager - vvmager@gmail.com
+(c) 2019-2021 Information Technology Group - http://itgroup.ro
+**************************************************************************************/
+
+menubar, .menubar {
+  border-top: solid 1px @dark_bg_color;
+  border-bottom: solid 1px @dark_bg_color;
+  background-color: @dark_bg_color;
+  color: @dark_fg_color;
+  -GtkWidget-window-dragging: false; }
+
+#xfwm {
+  color: shade(@dark_fg_color, 0.9); /* active_text_color_2: active buttons' drawings */
+  background-color: @dark_bg_color; } /*active_color_2, all wm frames*/
+
+#xfwm:selected {
+  color: mix(@dark_fg_color, #ffffff, 0.2); /*focused wm titles*/
+  background-color: shade(@dark_bg_color, 0.3); } /*active_color_1: outermost pixels of all wm fames*/
+
+#xfwm:disabled {
+  color: shade(@dark_fg_color, 0.75); /* inactive_text_color_2: un-focused wm titles and buttons' drawings */
+  background-color: shade(@dark_bg_color, 1.3); } /* inactive_color_1: active window 2nd top pixel line */
+
+/*
+window.csd decoration {
+  border: 4px solid @dark_bg_color; }
+*/

@@ -1,0 +1,12 @@
+/**************************************************************************************
+This file is distributed under the GNU General Public License version 2 (a.k.a. GPL-v2)
+(c) 2019-2021 Virgil Mager - vvmager@gmail.com
+(c) 2019-2021 Information Technology Group - http://itgroup.ro
+**************************************************************************************/
+
+/**********************************************************************/
+
+@define-color scrollbar_bg_color mix(mix(#d0d0d0, @shift_bg_color, 00.10), mix(@selected_bg_color, #f8f8f8, 0.4), 0.6);
+@define-color scrollbar_fg_color mix(@scrollbar_bg_color, @fg_color, 0.75);
+
+/**********************************************************************/

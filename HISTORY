@@ -1,0 +1,102 @@
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+- even minor versions (m.2k.r) represent stable releases
+- odd minor versions (m.2k+1.r) represent development releases
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+2.2.0
+=====
+- hack for nautilus' pathbar when window switches normal/backdrop states
+- incorporates all the changes in the 2.1.x development releases, plus a couple of minor tweaks
+
+2.1.2
+=====
+- tweaked headerbar height to be smaller for dialogs than for windows
+- enlarged the xfwm border corners' resize grabbers, they are L-shaped now
+- still a development release
+
+2.1.1
+=====
+- more tweaks and a couple of minor fixes
+- needs more testing, so still a development release
+
+2.1.0
+=====
+- fixed inline-toolbar issue that became apparent in xfce-4.16 dialogs (the buttons were not linked)
+- fixed a number of issues with gtk3 csd titlebars which manifest in programs that use convoluted titlebar structures
+- other small tweaks and fixes
+- because of the breadth of changes in the code logic, this is a development release
+
+2.0.3
+=====
+- tweaked the appearene of the action buttons in gtk3 message dialogs, they now look like plain linked buttons
+
+2.0.2
+=====
+- fixed explicit background-color for fullscreen toolbars and revealers (e.g. the top toolbar revealer in "eye of gnome" when in fullscreen mode)
+- fixed appearence of gtk3 dialog boxes
+- minor tweaks
+
+2.0.1
+=====
+- fixed a long-standing bug with linked buttons and spinbuttons which were not drawn properly under some rare circumstances (e.g. Inkscape-gtk3)
+- fixed thunar scrollbars issue (this is a workaround for an improper use of standard gtk3 classes in thunar code)
+- slightly increased the density of the desktop icons in xfce-4.14 (they now have the same density as in the xfce-4.12/gtk2)
+
+2.0.0
+=====
+- gtk-3 support for Xfce 4.14: xfwm4 window manager, Xfce task switcher, Xfce desktop icons, and Xfce panel
+- renamed tweaking options 'scrolbar-handle-decoration-XXX' to 'scrolbar-decoration-XXX' in view of future decorations
+- some minor bug fixes
+
+1.5.0
+=====
+- renamed the scrollbar controls theming options from from 'scrollbar-XXX' to 'scrollbar-controls-XXX'
+- new tweaking option 'scrollbar-controls-flat' (illustrated in 'ClassicLooks Graphite' sub-theme)
+- renamed tweaking option 'selected_fg_color' to 'selected_focused_fg_color' to better reflect its function
+- greatly simplified the scrollbar controls theming options: all 'scrollbar-controls-XXX' options are now mutually-exclusive, see 'scrollbar-controls' entries in 'ClassicLooks/TOOLS/CONFIG/HACKING' file
+- many tweaks and fixes
+
+1.4.0
+=====
+- new/enhanced tweaking options: 'scrollbar-handle-decoration-on/off', 'scrollbar-contrast/themed/accent', 'scrollbar-hover-contrast/themed/accent', see 'ClassicLooks/TOOLS/CONFIG/HACKING' file
+- removed tweaking option 'default_button_accent_color', its role is now taken by 'accent_bg_color'
+- renamed tweaking option 'tab-tab' to 'tab-classic'
+- minor tweaks
+
+1.3.1
+=====
+- new tweaking option 'accent_fg_color', and renamed old tweaking option 'accent_color' to 'accent_bg_color' (i.e. accent-colored items are now controlled by either 'accent_fg_color', or 'accent_bg_color', or the tuple 'accent_fg/bg_color'), see 'ClassicLooks/TOOLS/CONFIG/HACKING' file
+- tweaked the relief effect on accent-colored buttons (only scrollbar buttons and sliders are affected in this development release)
+
+1.3.0
+=====
+- new tweaking options: 'accent_color', 'scrollbar-themed/accent', 'button-hover-contrast/accent', 'button-pressed-contrast/accent', see 'ClassicLooks/TOOLS/CONFIG/HACKING' file
+- renamed tweaking options 'default-button-explicit' and 'default_button_explicit_color' to 'default-button-accent' and 'default_button_accent_color' respectively
+- added accent color to 'ClassicLooks Summerfield' and 'ClassicLooks Devilsclaw' sub-themes to illustrate the new tweaking options
+- synced gtk3 tabs' height scaling w/r to varying font sizes with gtk2 tabs (now works ok for font sizes 7...13)
+- many tweaks and corner-case fixes
+
+1.2.0
+=====
+- complete re-write of 'ClassicLooks XFWM (HDPI)' window manager theme to properly integrate with the 'window-frame-dark' option
+- re-enabled the 'ClassicLooks XFWM (HDPI)' window manager theme and the 'dpi-high' version of gtk3-csd titlebars (these have been temporarily disabled in version 1.1.0)
+- fixed color for check:hover and radio:hover on menu items (particularly useful for darker hover colors)
+- fixed color for arrow.top:normal and arrow.bottom:normal on dark-mode menus
+- minor corrections in 'INSTALL' file
+- other minor tweaks and fixes
+
+1.1.0
+=====
+- new tweaking options: 'window-frame-themed/dark' and 'menu-themed/dark', see 'ClassicLooks/TOOLS/CONFIG/HACKING' file
+- new 'ClassicLooks Ambiance' sub-theme to illustrate the 'window-frame-dark' and 'menu-dark' options
+- complete re-write of 'ClassicLooks XFWM' window manager theme to properly integrate with the 'window-frame-dark' option
+- temporarily disabled the 'ClassicLooks XFWM (HDPI)' window manager theme and the 'dpi-high' mode of gtk3-csd titlebars (these will be re-enabled in the next stable release)
+
+1.0.0
+=====
+- the 'ClassicLooks' theme is the followup of the 'Xfce Evolution' theme (see http://xfce-evolution.sourceforge.net); 'ClassicLooks 1.0.0' is equivalent to 'Xfce Evolution 7.0.0'
+- ClassicLooks 1.0.0 is the baseline version
+  ---------
+  IMPORTANT
+  ---------
+- if you currently have the 'Xfce Evolution' theme installed on your system, then YOU MUST FIRST UNINSTALL 'Xfce Evolution' before installing 'ClassicLooks' in order to clean up your system of any/all 'Xfce Evolution'-specific tweaks: follow ALL THE STEPS described in the 'UNINSTALL' section in file 'Xfce Evolution/TOOLS/SETUP/INSTALL' if you installed 'Xfce Evolution' from an 'xce-evolution-n.n.n.zip' archive, or use your package manager's uninstall procedure if you installed 'Xfce Evolution' from your OS-specific repository

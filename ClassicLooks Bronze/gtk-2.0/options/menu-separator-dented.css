@@ -1,0 +1,19 @@
+/**************************************************************************************
+This file is distributed under the GNU General Public License version 2 (a.k.a. GPL-v2)
+(c) 2019-2021 Virgil Mager - vvmager@gmail.com
+(c) 2019-2021 Information Technology Group - http://itgroup.ro
+**************************************************************************************/
+
+style "separator_menu_item" {
+	bg[NORMAL] = shade(0.92, @menu_bg_color)
+	GtkWidget::separator-height = 5
+	engine "murrine" {
+		contrast = 0.85
+	}
+}
+/*
+style "menu" {
+	GtkMenu::vertical-padding = 3 # no effect in Qt
+	ythickness = 3 # not effect in Qt, Qt uses 'xthickness' for both x and y, so i must use equal values
+}
+*/

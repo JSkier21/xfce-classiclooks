@@ -1,0 +1,185 @@
+/**************************************************************************************
+This file is distributed under the GNU General Public License version 2 (a.k.a. GPL-v2)
+(c) 2019-2021 Virgil Mager - vvmager@gmail.com
+(c) 2019-2021 Information Technology Group - http://itgroup.ro
+**************************************************************************************/
+
+notebook > header {
+  padding: 2px;
+  border-width: 1px;
+  background-image: none;
+  background-color: transparent; }
+  notebook > header:disabled {
+    background-image: none;
+    background-color: mix(#e2e3e0, @shift_bg_color, 00.30); }
+  notebook > header.top {
+    border-style: none none solid none;
+    padding-bottom: 2px;
+    margin: 0; }
+  notebook > header.top + * {
+    margin-top: -1px; }
+      notebook > header.top > tabs > tab:hover,
+      notebook > header.top > tabs > tab:checked:disabled {
+        box-shadow: inset 0 -3px mix(#b6b6b3, @shift_bg_color, 00.30); }
+      notebook > header.top > tabs > tab:checked {
+        box-shadow: inset 0 -3px @selected_bg_color; }
+  notebook > header.bottom {
+    border-style: solid none none none;
+    padding-top: 2px;
+    margin: 0; }
+  notebook > header.bottom + * {
+    margin-bottom: -1px; }
+      notebook > header.bottom > tabs > tab:hover,
+      notebook > header.bottom > tabs > tab:checked:disabled {
+        box-shadow: inset 0 3px mix(#b6b6b3, @shift_bg_color, 00.30); }
+      notebook > header.bottom > tabs > tab:checked {
+        box-shadow: inset 0 3px @selected_bg_color; }
+  notebook > header.left {
+    border-style: none solid none none;
+    padding-right: 2px;
+    margin: 0; }
+  notebook > header.left + * {
+    margin-left: -1px; }
+      notebook > header.left > tabs > tab:hover,
+      notebook > header.left > tabs > tab:checked:disabled {
+        box-shadow: inset -3px 0 mix(#b6b6b3, @shift_bg_color, 00.30); }
+      notebook > header.left > tabs > tab:checked {
+        box-shadow: inset -3px 0 @selected_bg_color; }
+  notebook > header.right {
+    border-style: none none none solid;
+    padding-left: 2px;
+    margin: 0; }
+  notebook > header.right + * {
+    margin-right: -1px; }
+      notebook > header.right > tabs > tab:hover,
+      notebook > header.right > tabs > tab:checked:disabled {
+        box-shadow: inset 3px 0 mix(#b6b6b3, @shift_bg_color, 00.30); }
+      notebook > header.right > tabs > tab:checked {
+        box-shadow: inset 3px 0 @selected_bg_color; }
+
+notebook > header > tabs,
+notebook > header > tabs:disabled {
+  border: none;
+  box-shadow: none;
+  background-image: none;
+  margin: 0; }
+  notebook > header.top > tabs, notebook > header.bottom > tabs {
+    padding: 0 4px; }
+  notebook > header.top > tabs:not(:only-child), notebook > header.bottom > tabs:not(:only-child) {
+    margin-left: 3px;
+    margin-right: 3px; }
+  notebook > header.top > tabs:not(:only-child):first-child, notebook > header.bottom > tabs:not(:only-child):first-child {
+    margin-left: -1px; }
+  notebook > header.top > tabs:not(:only-child):last-child, notebook > header.bottom > tabs:not(:only-child):last-child {
+    margin-right: -1px; }
+notebook > header.left > tabs, notebook > header.right > tabs {
+  padding: 4px 0;
+  background-image: none; }
+  notebook > header.left > tabs:not(:only-child), notebook > header.right > tabs:not(:only-child) {
+    margin-top: 3px;
+    margin-bottom: 3px; }
+    notebook > header.left > tabs:not(:only-child):first-child, notebook > header.right > tabs:not(:only-child):first-child {
+      margin-top: -1px; }
+    notebook > header.left > tabs:not(:only-child):last-child, notebook > header.right > tabs:not(:only-child):last-child {
+      margin-bottom: -1px; }
+
+notebook > header > tabs > tab {
+  min-height: 24px;
+  outline-offset: -2px;
+  color: mix(#444444, mix(@shift_bg_color, #444444, 0.398), 00.30);
+  background-image: none;
+  box-shadow: none;
+  font-weight: normal;
+  border-radius: 0px; }
+  notebook > header.left > tabs > tab, notebook > header.right > tabs > tab {
+    min-height: 24px; }
+  notebook > header.top > tabs > tab,
+  notebook > header.top > tabs > tab.reorderable-page,
+  notebook > header.bottom > tabs > tab,
+  notebook > header.bottom > tabs > tab.reorderable-page {
+    border: none;
+    margin: 0 4px;
+    padding: 1px 4px; }
+    notebook > header.top > tabs > tab.reorderable-page,
+    notebook > header.bottom > tabs > tab.reorderable-page {
+      padding-top: 0;
+      padding-bottom: 0; }
+  notebook > header.left > tabs > tab,
+  notebook > header.left > tabs > tab.reorderable-page,
+  notebook > header.right > tabs > tab,
+  notebook > header.right > tabs > tab.reorderable-page {
+    border: none;
+    margin: 4px 0;
+    padding: 0 7px; }
+    notebook > header.left > tabs > tab.reorderable-page,
+    notebook > header.right > tabs > tab.reorderable-page {
+      padding-left: 0;
+      padding-right: 0; }
+
+notebook > header > tabs > tab:hover,
+notebook > header.left > tabs > tab:hover, notebook > header.right > tabs > tab:hover {
+  border-color: transparent;
+  background-image: none; }
+notebook > header > tabs > tab:disabled,
+notebook > header.left > tabs > tab:disabled, notebook > header.right > tabs > tab:disabled,
+notebook > header > tabs > tab:checked:disabled,
+notebook > header.left > tabs > tab:checked:disabled, notebook > header.right > tabs > tab:checked:disabled {
+  background-image: none;
+  border-color: transparent; }
+  notebook > header > tabs > tab:disabled, 
+  notebook > header.left > tabs > tab:disabled, notebook > header.right > tabs > tab:disabled {
+    box-shadow: none; }
+notebook > header > tabs > tab:checked,
+notebook > header.left > tabs > tab:checked, notebook > header.right > tabs > tab:checked {
+  border-color: transparent;
+  background-image: image(mix(@bg_color, @shift_bg_color, 00.30));
+  color: mix(@fg_color, mix(@shift_bg_color, @fg_color, 0.398), 00.30); }
+
+notebook > header > tabs > tab, notebook > header > tabs > tab label,
+notebook > header > tabs > tab:disabled, notebook > header > tabs > tab:disabled label {
+  margin: 4px 0;
+  text-shadow: none; }
+notebook > header > tabs > tab button.flat {
+  padding: 0;
+  min-width: 18px;
+  min-height: 18px;
+  margin: 5px 4px; }
+  notebook > header > tabs > tab button.flat:hover {
+    color: currentColor; }
+  notebook > header > tabs > tab button.flat {
+    color: alpha(currentColor,0.8); }
+
+notebook > header > tabs > arrow {
+  min-height: 16px;
+  min-width: 16px;
+  border-radius: 0; }
+  notebook > header > tabs > arrow:hover:not(:active) {
+    background-clip: padding-box;
+    background-image: none;
+    background-color: mix(rgba(255, 255, 255, 0.3), rgba(0, 0, 0, 0.3), 00.30);
+    border-color: transparent;
+    box-shadow: none; }
+  notebook > header > tabs > arrow:disabled {
+    border-color: transparent;
+    background-color: transparent;
+    background-image: none;
+    text-shadow: none;
+    -gtk-icon-shadow: none; }
+  notebook > header.top > tabs > arrow {
+    border-top-style: none; }
+  notebook > header.bottom > tabs > arrow {
+    border-bottom-style: none; }
+  notebook > header.top > tabs > arrow, notebook > header.bottom > tabs > arrow {
+    margin-left: -5px;
+    margin-right: -5px;
+    padding-left: 4px;
+    padding-right: 4px; }
+  notebook > header.left > tabs > arrow {
+    border-left-style: none; }
+  notebook > header.right > tabs > arrow {
+    border-right-style: none; }
+  notebook > header.left > tabs > arrow, notebook > header.right > tabs > arrow {
+    margin-top: -5px;
+    margin-bottom: -5px;
+    padding-top: 4px;
+    padding-bottom: 4px; }

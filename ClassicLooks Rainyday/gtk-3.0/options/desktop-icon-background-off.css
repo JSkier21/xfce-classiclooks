@@ -1,0 +1,29 @@
+/**************************************************************************************
+This file is distributed under the GNU General Public License version 2 (a.k.a. GPL-v2)
+(c) 2019-2021 Virgil Mager - vvmager@gmail.com
+(c) 2019-2021 Information Technology Group - http://itgroup.ro
+**************************************************************************************/
+
+XfdesktopIconView.view {
+  -XfdesktopIconView-ellipsize-icon-labels: 1;
+  -XfdesktopIconView-cell-padding: 1;
+  -XfdesktopIconView-cell-spacing: 0;
+  color: mix(@selected_bg_color, rgba(255, 255, 255, 0), 0.6);
+/*color: rgba(255, 255, 255, 0);*/ }
+
+XfdesktopIconView.view .rubberband {
+  border: 1px solid mix(@selected_bg_color, rgba(255, 255, 255, 0), 0.2);
+  border-radius: 0;
+  background-color: mix(@selected_bg_color, rgba(255, 255, 255, 0), 0.5); }
+
+XfdesktopIconView.view .label {
+  color: #f8f8f8;
+  background-color: transparent;
+  text-shadow: 1px 1px #000000;
+  border-radius: 3px; }
+
+XfdesktopIconView.view .label:active {
+  text-shadow: none;
+  color: @selected_focused_fg_color;
+  background-color: mix(@selected_bg_color, rgba(255, 255, 255, 0), 0.2); }
+

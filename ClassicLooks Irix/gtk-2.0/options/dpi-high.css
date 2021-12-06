@@ -1,0 +1,27 @@
+/**************************************************************************************
+This file is distributed under the GNU General Public License version 2 (a.k.a. GPL-v2)
+(c) 2019-2021 Virgil Mager - vvmager@gmail.com
+(c) 2019-2021 Information Technology Group - http://itgroup.ro
+**************************************************************************************/
+
+style "menu" {
+	engine "murrine" {
+		arrowstyle = 1
+	}
+}
+style "combobox" {
+	engine "murrine" {
+		arrowstyle = 1
+	}
+}
+style "scrollbar" {
+	GtkRange::stepper-size = 18
+	GtkScrollbar::slider-width = 18
+	engine "murrine" {
+		arrowstyle = 1
+	}
+}
+
+style "radiocheck" {
+	GtkCheckButton::indicator-size = 20
+}

@@ -1,0 +1,12 @@
+/**************************************************************************************
+This file is distributed under the GNU General Public License version 2 (a.k.a. GPL-v2)
+(c) 2019-2021 Virgil Mager - vvmager@gmail.com
+(c) 2019-2021 Information Technology Group - http://itgroup.ro
+**************************************************************************************/
+
+style "default" {
+	color["default_button_highlight_color"] = @accent_bg_color
+	engine "murrine" {
+		default_button_color = shade(0.99, @default_button_highlight_color)
+	}
+}

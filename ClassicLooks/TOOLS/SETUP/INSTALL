@@ -1,0 +1,97 @@
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+~ This file last changed in version 1.2.0 ~
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+DEPENDENCIES
+============
+- Gtk2 styling requires the Gtk2 'murrine' engine package, installation instructions below
+- Gtk styling of Qt5.7+ requires the 'Qt5 style plugins' package, installation instructions below
+
+System patches
+--------------
+- Qt5.x apps require the environment variable QT_QPA_PLATFORMTHEME to be set to gtk2 in order for them to pick up the gtk2 theme; the lines containing '#classiclooks' in the install/uninstall instructions below will apply/undo a fix for this issue
+- Qt5.x apps, at least up to Qt5.10, may produce distorted fonts on some systems (see https://bugreports.qt.io/browse/QTBUG-56809); the lines containing 'conf.d' in the install/uninstall instructions below will apply/undo a fix for this issue which will work on most modern Xfce systems (spcecifically, on systems which use a typical CRT or LCD screen and which use the default Xfce font hinting 'slight' or 'medium')
+
+Recommends
+----------
+The Xfce desktop just isn't complete without the Nemo file manager (optional install).
+The ClassicLooks theme blends well with Google's 'Noto' fonts (optional install) and the 'elementary Xfce darker' icon set (optional install).
+
+
+INSTALLATION
+============
+The installation procedure below will install 'ClassicLooks' FOR YOUR OWN USER from the 'classiclooks-n.n.n.zip' archive.
+
+Alternatively, a 'ClassicLooks' package/port may be provied for your distribution by third-party maintaners, which will (typically) install 'ClassicLooks' for all users.
+
+The install procedure for your own user consists of the following 3 steps:
+
+1) Remove your existing 'ClassicLooks' files from your themes folder, if any:
+   rm -R -f ~/.themes/'ClassicLooks'*
+2) Extract the 'ClassicLooks' theme folders from the 'classiclooks-n.n.n.zip' archive into your themes folder '~/.themes':
+   mkdir -p ~/.themes
+   unzip <full/path/to/classiclooks-n.n.n.zip> 'ClassicLooks*' -d ~/.themes
+3) Install/update 'ClassicLooks'-specific system patches (including dependencies):
+  - run the patch installer:
+    ~/.themes/ClassicLooks/TOOLS/SETUP/patch.sh
+    OR
+  - if you do not wish to run the install script, or if the patch installer does not provide an option for your distribution, then follow the instructions in 'Manually install system patches' paragraph below
+
+Manually install system patches
+-------------------------------
+To "manually" install/update the 'ClassicLooks'-specific system patches for your own user (including dependencies), REPLACE step (3) above with the following:
+
+3a) Install/update the 'gtk2 murrine engine' and 'qt5 style plugings' dependencies by using your package manager:
+  - e.g. for Ubuntu (and most Ubuntu-based distros):
+    apt install gtk2-engines-murrine qt5-style-plugins
+3b) Set the environment variable 'QT_QPA_PLATFORMTHEME' to the value 'gtk2' in ALL your shell initialization files (this setting is required for qt5+ applications to use the gtk2 theme), and mark this setting with '#classiclooks' hash-tag such that it can be easily identified and removed on uninstall:
+  - e.g. if 'bash' is installed on your system then you will have to add the following line at the end of all bash initialiation files _WHICH ALREADY EXIST_ in your home directory (i.e. '~/.bash_profile' and/or '~/.bash_login' and/or '~/.profile'):
+    export QT_QPA_PLATFORMTHEME=gtk2 #classiclooks
+  - IMPORTANT: do _not_ create any new shell initialization files; instead, edit only the files that _already exist_ on your system
+  - note: if QT_QPA_PLATFORMTHEME is already set to gtk2 (from a previous installation, or by a different applicatin), then leave unchanged
+3c) Apply the qt5 font fix patch:
+    mkdir -p ~/.config/fontconfig/conf.d
+    cp ~/.themes/'ClassicLooks'/TOOLS/SETUP/lib/90-classiclooks_qt5fontfix.conf ~/.config/fontconfig/conf.d/
+
+Sub-themes
+----------
+The ClassicLooks theme contains multiple display "sub-themes" and two window manager themes, each stored in a separate folder after installation (e.g. the '~/.themes/ClassicLooks Bronze' folder contains the 'ClassicLooks Bronze' sub-theme, the '~/.themes/ClassicLooks XFWM4' folder contains the 'ClassicLooks XFWM4' window manager theme, etc). You may safely remove any of the 'ClassicLooks' theme folders which you do not (intend to) use, _EXCEPT_ the '~/.themes/ClassicLooks' main theme folder which contains COMMON DATA REQUIRED BY ALL SUB-THEMES (deleting this folder will render all sub-themes unusable).
+
+Display settings
+----------------
+The 'ClassicLooks' theme consists of a collection of "display themes" (see Xfce Settings Panel -> Appearance -> Themes), plus two "window manager themes" (see Xfce Settings Panel -> Appearance -> Window Manager); in this context:
+- the 'ClassicLooks' display themes blend well with 'Noto Sans 9'/'DejaVu Sans Book 9'/'Bitstream Vera Sans 9' fonts and 'elementary Xfce darkER' icon set, and they scale consistently for font sizes [7-13]@96dpi
+- for a consistent look of the window titles across all applications (xfwm4 and gtk3-csd) you should select the same font (family, style, and size) for the window manager titles as you have selected for your display theme
+- for a consistent look of window manager controls across all applications (xfwm4 and gtk3-csd) you should select the 'ClassicLooks XFWM4' window manager theme when using a low-DPI display theme (e.g. 'ClassicLooks') and the 'ClassicLooks XFWM4 (HDPI)' window manager theme when using a high-DPI display theme (e.g. 'ClassicLooks (HDPI)')
+
+
+UNINSTALL
+=========
+The uninstall procedure below will remove 'ClassicLooks FOR YOUR OWN USER, and it applies _ONLY_ if you installed 'ClassicLooks' from the 'classiclooks-n.n.n.zip' archive according to the installation instructions described in the 'INSTALLATION' chapter earlier in this document. 
+
+IF YOU INSTALLED 'ClassicLooks' BY USING YOUR PACKAGE MANAGER (e.g. from your distribution's repository) THEN YOU MUST USE YOUR PACKAGE MANAGER TO UNINSTALL IT INSTEAD OF THE PROCEDURE BELOW.
+
+The uninstall procedure for your own user consists of 2 steps:
+
+1) Remove the 'ClassicLooks'-specific system patches (dependencies will not be removed):
+ - run the patch uninstaller:
+   ~/.themes/ClassicLooks/TOOLS/SETUP/unpatch.sh
+   OR
+ - if you do not wish to run the uninstall script, or if the patch uninstaller does not provide an option for your distribution, then follow the instructions in 'Manually remove system patches' paragraph below
+2) Delete all the 'ClassicLooks' theme's folders form your '~/.themes' folder:
+   rm -R -f ~/.themes/'ClassicLooks'*
+ - note: this step is not necessary if you have run the patch uninstaller 'unpatch.sh' in step (1) above and you have chosen the option to automatically delete all 'ClassicLooks' themes's folders
+
+Manually remove system patches
+------------------------------
+To "manually" remove the 'ClassicLooks'-specific system patches for your own user (excluding the dependencies), REPLACE step (1) above with the following:
+
+1a) Remove the qt5 font fix patch:
+    rm -f ~/.config/fontconfig/conf.d/90-classiclooks_qt5fontfix.conf
+1b) Remove all the lines that contain the '#classiclooks' hash-tag from ALL the shell initialization files which are present in your home directory (this will remove only the QT_QPA_PLATFORMTHEME setting in the current version):
+  - e.g. for csh/tcsh shells: sed -i.bak '/#classiclooks/d' ~/.tcshrc ~/.cshrc
+
+
+CUSTOMIZATION
+=============
+The 'ClassicLooks' theme supports several end-user tweaking options, see '~/.themes/ClassicLooks/TOOLS/CONFIG/HACKING' after installation.

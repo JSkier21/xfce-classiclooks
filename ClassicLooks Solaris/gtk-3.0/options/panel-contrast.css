@@ -1,0 +1,61 @@
+/**************************************************************************************
+This file is distributed under the GNU General Public License version 2 (a.k.a. GPL-v2)
+(c) 2019-2021 Virgil Mager - vvmager@gmail.com
+(c) 2019-2021 Information Technology Group - http://itgroup.ro
+**************************************************************************************/
+
+/* .XfceHeading {
+  margin: 0;
+  padding: 0;
+  border-width: 0;
+  background-image: none;
+  background-color: shade(#cccccc, 1.2);
+  color: #222123;
+  text-shadow: 0px 1px rgba(0, 0, 0, 0.1); }*/
+
+.xfce4-panel.background button {
+  background-image: linear-gradient(to bottom, mix(#f4f4f4, @shift_bg_color, 00.30), mix(@bg_color, @shift_bg_color, 00.30) 50%, mix(#c0c0c0, @shift_bg_color, 00.30));
+  border-color: mix(#a0a0a0, @shift_bg_color, 00.30);
+  border-bottom-color: mix(#808080, @shift_bg_color, 00.30);
+  border-radius: 2px;
+  margin: 1px; }
+
+.xfce4-panel.background .tasklist button {
+  margin-top: 2px;
+  margin-bottom: 2px; }
+
+.xfce4-panel.background button.flat {
+  background-image: none;
+  background-color: transparent;
+  border: 1px solid;
+  border-radius: 3px;
+  border-color: transparent;
+  box-shadow: none;
+  padding: 1px; }
+  .xfce4-panel.background button:hover {
+    color: mix(@fg_color, mix(@shift_bg_color, @fg_color, 0.398), 00.30);
+    outline-color: mix(rgba(46, 52, 54, 0.3), rgba(0, 0, 0, 0.3), 00.30);
+    border-color: mix(#909090, @shift_bg_color, 00.30);
+    -gtk-icon-shadow: 0 1px mix(rgba(255, 255, 255, 0.76923), rgba(0, 0, 0, 0.76923), 00.30);
+    box-shadow: inset 0 1px mix(#ffffff, @shift_bg_color, 00.30);
+    text-shadow: none;
+    margin: 1px;
+    background-image: linear-gradient(to bottom, mix(#ffffff, mix(@shift_bg_color, #ffffff, 0.399), 00.30), mix(#f0f0f0, mix(@shift_bg_color, #f0f0f0, 0.399), 00.30) 50%, mix(#e0e0e0, mix(@shift_bg_color, #e0e0e0, 0.399), 00.30));
+    -gtk-icon-effect: highlight; }
+  .xfce4-panel.background button:checked, .xfce4-panel.background button:active {
+    color: @selected_focused_fg_color;
+    border-color: mix(#707070, @shift_bg_color, 00.30);
+    border-top-color: mix(#606060, @shift_bg_color, 00.30);
+    background-image: linear-gradient(to bottom, mix(#aaaaaa, @shift_bg_color, 00.30), mix(#999999, @shift_bg_color, 00.30) 50%, mix(#888888, @shift_bg_color, 00.30));
+/*  background-image: linear-gradient(to bottom, mix(#cccccc, @shift_bg_color, 00.30), mix(#aaaaaa, @shift_bg_color, 00.30) 50%, mix(#999999, @shift_bg_color, 00.30));*/
+    box-shadow: none;
+    text-shadow: none;
+    -gtk-icon-shadow: none; }
+    .xfce4-panel.background button:checked:hover, .xfce4-panel.background button:active:hover {
+      background-image: linear-gradient(to bottom, mix(#b8b8b8, @shift_bg_color, 00.30), mix(#a8a8a8, @shift_bg_color, 00.30) 50%, mix(#989898, @shift_bg_color, 00.30)); }
+  .xfce4-panel.background button:checked:disabled, .xfce4-panel.background button:active:disabled {
+    box-shadow: none; }
+
+.xfce4-panel.background menu {
+  -gtk-icon-effect: none;
+  text-shadow: none; }

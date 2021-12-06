@@ -1,0 +1,74 @@
+/**************************************************************************************
+This file is distributed under the GNU General Public License version 2 (a.k.a. GPL-v2)
+(c) 2019-2021 Virgil Mager - vvmager@gmail.com
+(c) 2019-2021 Information Technology Group - http://itgroup.ro
+**************************************************************************************/
+
+# current formula for themed:
+#mix(0.7, mix(0.45, "#ffffff", @selected_bg_color), mix(0.2, "#000000", mix(00.10, @shift_bg_color, @bg_color)))
+# maybe better, but needs syncing in gtk3:
+#mix(0.12, @bg_color, mix(0.6, @selected_bg_color, mix(00.10, @shift_bg_color, @bg_color)))
+
+/**********************************************************************/
+
+style "scrollbar" {
+	color["scrollbar_bg_color"] = mix(0.7, mix(0.45, "#ffffff", @selected_bg_color), mix(0.2, "#000000", mix(00.10, @shift_bg_color, @bg_color)))
+	color["scrollbar_fg_color"] = mix(0.85, @fg_color, @scrollbar_bg_color)
+}
+
+/**********************************************************************/
+
+style "button" {
+	color["button_bg_color"] = mix(0.7, mix(0.45, "#ffffff", @selected_bg_color), mix(0.2, "#000000", mix(00.10, @shift_bg_color, @bg_color)))
+	color["button_fg_color"] = mix(0.95, @fg_color, @button_bg_color)
+}
+
+style "toolbar_button" {
+	color["button_bg_color"] = mix(0.7, mix(0.45, "#ffffff", @selected_bg_color), mix(0.2, "#000000", mix(00.10, @shift_bg_color, @bg_color)))
+	color["button_fg_color"] = mix(0.95, @fg_color, @button_bg_color)
+}
+
+style "treeview_header" {
+	color["button_bg_color"] = mix(0.7, mix(0.45, "#ffffff", @selected_bg_color), mix(0.2, "#000000", mix(00.10, @shift_bg_color, @bg_color)))
+	color["button_fg_color"] = mix(0.95, @fg_color, @button_bg_color)
+}
+
+style "combo" {
+	color["button_bg_color"] = mix(0.7, mix(0.45, "#ffffff", @selected_bg_color), mix(0.2, "#000000", mix(00.10, @shift_bg_color, @bg_color)))
+	color["button_fg_color"] = mix(0.95, @fg_color, @button_bg_color)
+}
+
+style "combo_button" {
+	color["button_bg_color"] = mix(0.7, mix(0.45, "#ffffff", @selected_bg_color), mix(0.2, "#000000", mix(00.10, @shift_bg_color, @bg_color)))
+	color["button_fg_color"] = mix(0.95, @fg_color, @button_bg_color)
+}
+
+style "combobox" {
+	color["button_bg_color"] = mix(0.7, mix(0.45, "#ffffff", @selected_bg_color), mix(0.2, "#000000", mix(00.10, @shift_bg_color, @bg_color)))
+	color["button_fg_color"] = mix(0.95, @fg_color, @button_bg_color)
+}
+
+style "combobox_entry" {
+	color["button_bg_color"] = mix(0.7, mix(0.45, "#ffffff", @selected_bg_color), mix(0.2, "#000000", mix(00.10, @shift_bg_color, @bg_color)))
+	color["button_fg_color"] = mix(0.95, @fg_color, @button_bg_color)
+}
+
+style "combobox_entry_button" {
+	color["button_bg_color"] = mix(0.7, mix(0.45, "#ffffff", @selected_bg_color), mix(0.2, "#000000", mix(00.10, @shift_bg_color, @bg_color)))
+	color["button_fg_color"] = mix(0.95, @fg_color, @button_bg_color)
+}
+
+style "spinbutton" {
+	color["button_bg_color"] = mix(0.7, mix(0.45, "#ffffff", @selected_bg_color), mix(0.2, "#000000", mix(00.10, @shift_bg_color, @bg_color)))
+	color["button_fg_color"] = mix(0.95, @fg_color, @button_bg_color)
+}
+
+style "radiocheck" {
+	color["button_bg_color"] = mix(0.7, mix(0.45, "#ffffff", @selected_bg_color), mix(0.2, "#000000", mix(00.10, @shift_bg_color, @bg_color)))
+	color["button_fg_color"] = mix(0.95, @fg_color, @button_bg_color)
+}
+
+style "set_text_color_to_fg_color_workaround" {
+	color["button_bg_color"] = mix(0.7, mix(0.45, "#ffffff", @selected_bg_color), mix(0.2, "#000000", mix(00.10, @shift_bg_color, @bg_color)))
+	color["button_fg_color"] = mix(0.95, @fg_color, @button_bg_color)
+}

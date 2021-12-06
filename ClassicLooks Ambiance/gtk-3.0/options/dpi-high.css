@@ -1,0 +1,163 @@
+/**************************************************************************************
+This file is distributed under the GNU General Public License version 2 (a.k.a. GPL-v2)
+(c) 2019-2021 Virgil Mager - vvmager@gmail.com
+(c) 2019-2021 Information Technology Group - http://itgroup.ro
+**************************************************************************************/
+
+menu menuitem > arrow,
+.menu menuitem > arrow,
+.context-menu menuitem > arrow {
+/*-GtkArrow-arrow-scaling: 0.83; */
+  color: mix(shade(@fg_color, 1.55), @menu_bg_color, 0.2); }
+  menu menuitem:hover > arrow,
+  .menu menuitem:hover > arrow,
+  .context-menu menuitem:hover > arrow {
+    color: mix(@selected_focused_fg_color, @selected_bg_color, 0.15); }
+  menu menuitem:disabled > arrow,
+  .menu menuitem:disabled > arrow,
+  .context-menu menuitem:disabled > arrow {
+    color: mix(#868988, @shift_bg_color, 00.10); }
+
+menu menuitem arrow:dir(ltr),
+.menu menuitem arrow:dir(ltr),
+.context-menu menuitem arrow:dir(ltr) {
+      -gtk-icon-source: image(-gtk-recolor(url("../assets/override/menu-arrow-large-right-symbolic.svg"))); }
+  menu menuitem:not(:hover):not(:disabled) arrow:dir(ltr),
+  .menu menuitem:not(:hover):not(:disabled) arrow:dir(ltr),
+  .context-menu menuitem:not(:hover):not(:disabled) arrow:dir(ltr) {
+    -gtk-icon-source: image(-gtk-recolor(url("../assets/override/menu-arrow-large-right-symbolic.png"))); }
+menu menuitem arrow:dir(rtl),
+.menu menuitem arrow:dir(rtl),
+.context-menu menuitem arrow:dir(rtl) {
+  -gtk-icon-source: image(-gtk-recolor(url("../assets/override/menu-arrow-large-left-symbolic.svg"))); }
+  menu menuitem:not(:hover):not(:disabled) arrow:dir(rtl),
+  .menu menuitem:not(:hover):not(:disabled) arrow:dir(rtl),
+  .context-menu menuitem:not(:hover):not(:disabled) arrow:dir(rtl) {
+    -gtk-icon-source: image(-gtk-recolor(url("../assets/override/menu-arrow-large-left-symbolic.png"))); }
+
+menu > arrow.top,
+.menu > arrow.top,
+.context-menu > arrow.top {
+  background-image: image(-gtk-recolor(url("../assets/override/menu-arrow-large-up-symbolic.svg"))); }
+menu > arrow.bottom,
+.menu > arrow.bottom,
+.context-menu > arrow.bottom {
+  background-image: image(-gtk-recolor(url("../assets/override/menu-arrow-large-down-symbolic.svg"))); }
+
+combobox > box > button.combo arrow {
+  background-image: -gtk-scaled(url("../assets/override/combobox-symbolic-large.png")); }
+  combobox > box > button.combo arrow:disabled {
+    background-image: -gtk-scaled(url("../assets/override/combobox-symbolic-large-dim.png")); }
+
+scrollbar button {
+  min-width: 16px;
+  min-height: 16px; }
+scrollbar.vertical button.down, scrollbar.vertical .button.down {
+  -gtk-icon-source: image(-gtk-recolor(url("../assets/override/scrollbar-arrow-down-large-symbolic.svg"))); }
+scrollbar.vertical button.up, scrollbar.vertical .button.up {
+  -gtk-icon-source: image(-gtk-recolor(url("../assets/override/scrollbar-arrow-up-large-symbolic.svg"))); }
+scrollbar.horizontal button.down, scrollbar.horizontal .button.down {
+  -gtk-icon-source: image(-gtk-recolor(url("../assets/override/scrollbar-arrow-right-large-symbolic.svg"))); }
+scrollbar.horizontal button.up, scrollbar.horizontal .button.up {
+  -gtk-icon-source: image(-gtk-recolor(url("../assets/override/scrollbar-arrow-left-large-symbolic.svg"))); }
+
+scrollbar.vertical button, scrollbar.vertical .button {
+  min-height: 16px;
+  min-width: 16px;
+  color: mix(#585858, mix(@shift_bg_color, #606060, 0.498), 00.10); }
+scrollbar.horizontal button, scrollbar.horizontal .button {
+  min-height: 16px;
+  min-width: 16px;
+  color: mix(#585858, mix(@shift_bg_color, #606060, 0.498), 00.10); }
+scrollbar button:hover, scrollbar .button:hover {
+  color: mix(@fg_color, mix(@shift_bg_color, @fg_color, 0.398), 00.10);
+  background-image: image(shade(mix(mix(@bg_color, @shift_bg_color, 00.10), @bg_color, 0.1), 1.05)); }
+scrollbar button:disabled, scrollbar .button:disabled {
+  color: mix(#a0a0a0, @shift_bg_color, 00.10); }
+scrollbar.vertical slider, scrollbar.vertical .slider {
+  min-width: 16px; }
+scrollbar.horizontal slider, scrollbar.horizontal .slider {
+  min-height: 16px; }
+
+notebook > header > tabs > tab button.flat {
+  min-width: 22px;
+  min-height: 22px; }
+notebook > header.top {
+  margin-bottom: 1px; }
+notebook > header.bottom {
+  margin-top: 1px; }
+notebook > header.left {
+  margin-right: 1px; }
+notebook > header.right {
+  margin-left: 1px; }
+
+check,
+radio {
+  min-height: 20px;
+  min-width: 20px; }
+check {
+  -gtk-icon-source: image(url("../assets/extras/checkbox-unchecked-active-large.png")); }
+check:checked {
+  -gtk-icon-source: image(url("../assets/extras/checkbox-checked-active-large.png")); }
+check:indeterminate {
+  -gtk-icon-source: image(url("../assets/extras/checkbox-indeterminate-active-large.png")); }
+check:checked:disabled {
+  -gtk-icon-source: image(url("../assets/extras/checkbox-checked-disabled-large.png")); }
+check:not(checked):disabled {
+  -gtk-icon-source: image(url("../assets/extras/checkbox-unchecked-disabled-large.png")); }
+check:indeterminate:disabled {
+  -gtk-icon-source: image(url("../assets/extras/checkbox-indeterminate-disabled-large.png")); }
+radio {
+  -gtk-icon-source: image(url("../assets/extras/radio-unchecked-active-large.png")); }
+radio:checked {
+  -gtk-icon-source: image(url("../assets/extras/radio-checked-active-large.png")); }
+radio:indeterminate {
+  -gtk-icon-source: image(url("../assets/extras/radio-indeterminate-active-large.png")); }
+radio:checked:disabled {
+  -gtk-icon-source: image(url("../assets/extras/radio-checked-disabled-large.png")); }
+radio:not(checked):disabled {
+  -gtk-icon-source: image(url("../assets/extras/radio-unchecked-disabled-large.png")); }
+radio:indeterminate:disabled {
+  -gtk-icon-source: image(url("../assets/extras/radio-indeterminate-disabled-large.png")); }
+
+.titlebar,
+headerbar {
+  padding: 0 11px 0 8px; } 
+headerbar button.titlebutton.minimize, headerbar button.titlebutton.maximize, headerbar button.titlebutton.restore, headerbar button.titlebutton.close {
+  min-width: 30px;
+  min-height: 39px; }
+  headerbar button.titlebutton.close {
+    background-image: -gtk-scaled(url("../assets/extras/csd-close-active-large.png")); }
+  headerbar button.titlebutton.close:hover {
+    box-shadow: none;
+    background-image: -gtk-scaled(url("../assets/extras/csd-close-prelight-large.png")); }
+  headerbar button.titlebutton.close:active {
+    background-image: -gtk-scaled(url("../assets/extras/csd-close-pressed-large.png")); }
+  headerbar button.titlebutton.close:backdrop, headerbar button.titlebutton.close:hover:backdrop,
+  headerbar button.titlebutton.close:disabled, headerbar button.titlebutton.close:disabled:hover {
+    background-image: -gtk-scaled(url("../assets/extras/csd-close-inactive-large.png")); }
+  headerbar button.titlebutton.minimize {
+    background-image: -gtk-scaled(url("../assets/extras/csd-hide-active-large.png")); }
+  headerbar button.titlebutton.minimize:hover {
+    box-shadow: none;
+    background-image: -gtk-scaled(url("../assets/extras/csd-hide-prelight-large.png")); }
+  headerbar button.titlebutton.minimize:active {
+    background-image: -gtk-scaled(url("../assets/extras/csd-hide-pressed-large.png")); }
+  headerbar button.titlebutton.minimize:backdrop, headerbar button.titlebutton.minimize:hover:backdrop,
+  headerbar button.titlebutton.minimize:disabled, headerbar button.titlebutton.minimize:disabled:hover {
+    background-image: -gtk-scaled(url("../assets/extras/csd-hide-inactive-large.png")); }
+  headerbar button.titlebutton.maximize, headerbar button.titlebutton.restore {
+    background-image: -gtk-scaled(url("../assets/extras/csd-maximize-active-large.png")); }
+  headerbar button.titlebutton.maximize:hover, headerbar button.titlebutton.restore:hover {
+    box-shadow: none;
+    background-image: -gtk-scaled(url("../assets/extras/csd-maximize-prelight-large.png")); }
+  headerbar button.titlebutton.maximize:active, headerbar button.titlebutton.restore:active {
+    background-image: -gtk-scaled(url("../assets/extras/csd-maximize-pressed-large.png")); }
+  headerbar button.titlebutton.maximize:backdrop, headerbar button.titlebutton.maximize:hover:backdrop,
+  headerbar button.titlebutton.maximize:disabled, headerbar button.titlebutton.maximize:disabled:hover,
+  headerbar button.titlebutton.restore:backdrop, headerbar button.titlebutton.restore:hover:backdrop,
+  headerbar button.titlebutton.restore:disabled, headerbar button.titlebutton.restore:disabled:hover {
+    background-image: -gtk-scaled(url("../assets/extras/csd-maximize-inactive-large.png")); }
+
+window.csd decoration {
+  margin: 7px; }

@@ -1,0 +1,73 @@
+/**************************************************************************************
+This file is distributed under the GNU General Public License version 2 (a.k.a. GPL-v2)
+(c) 2019-2021 Virgil Mager - vvmager@gmail.com
+(c) 2019-2021 Information Technology Group - http://itgroup.ro
+**************************************************************************************/
+
+@import "button-pressed-dented_tab.css";
+
+notebook > header {
+  padding: 4px;
+  border-color: mix(#b6b6b3, @shift_bg_color, 00.30); }
+  notebook > header.top {
+    margin-top: -1px;
+    border-style: solid none solid none; }
+  notebook > header.bottom {
+    margin-bottom: -1px;
+    border-style: solid none solid none; }
+  notebook > header.left {
+    margin-left: -1px;
+    border-style: none solid none solid; }
+  notebook > header.right {
+    margin-right: -1px;
+    border-style: none solid none solid; }
+
+notebook > header.top > tabs, notebook > header.bottom > tabs, notebook > header.left > tabs, notebook > header.right > tabs {
+    padding: 1px 0;
+    border: none;
+    box-shadow: none;
+    background-image: image(transparent); }
+notebook > header > tabs > tab {
+  border-radius: 3px;
+  min-height: 20px; }
+  notebook > header.top > tabs > tab, notebook > header.bottom > tabs > tab {
+    border: 1px solid;
+    border-color: mix(#b0b0b0, @shift_bg_color, 00.30);
+    border-bottom-color: mix(#9a9a9a, @shift_bg_color, 00.30);
+    margin: 0 2px 0 2px; }
+  notebook > header.left > tabs > tab, notebook > header.right > tabs > tab {
+    border: 1px solid;
+    border-color: mix(#b0b0b0, @shift_bg_color, 00.30);
+    border-bottom-color: mix(#9a9a9a, @shift_bg_color, 00.30);
+    margin: 2px 0 2px 0; }
+  notebook > header > tabs > tab:hover,
+  notebook > header.left > tabs > tab:hover, notebook > header.right > tabs > tab:hover {
+    border-color: mix(#bcbcbc, @shift_bg_color, 00.30);
+    border-left-color: mix(#b4b4b4, @shift_bg_color, 00.30);
+    border-right-color: mix(#b4b4b4, @shift_bg_color, 00.30);
+    border-bottom-color: mix(#a8a8a8, @shift_bg_color, 00.30);
+    background-image: linear-gradient(to bottom, shade(mix(mix(@bg_color, @shift_bg_color, 00.30), @bg_color, 0.15), 1.11), shade(mix(mix(@bg_color, @shift_bg_color, 00.30), @bg_color, 0.15), 1.06) 50%, shade(mix(mix(@bg_color, @shift_bg_color, 00.30), @bg_color, 0.15), 0.94));
+    box-shadow: inset 0 1px shade(mix(mix(@bg_color, @shift_bg_color, 00.30), @bg_color, 0.15), 1.14);
+    text-shadow: 0 1px mix(#f8f8f8, @shift_bg_color, 00.30);
+    -gtk-icon-effect: none; }
+  notebook > header > tabs > tab:disabled {
+    border-color: mix(#c6c6c3, @shift_bg_color, 00.30);
+    border-bottom-color: mix(#bcbcbc, @shift_bg_color, 00.30);
+    border-right-color: mix(#bcbcbc, @shift_bg_color, 00.30);
+    background-image: linear-gradient(to bottom, mix(#e8e8e8, @shift_bg_color, 00.30), mix(#d8d8d8, @shift_bg_color, 00.30)); }
+  notebook > header > tabs > tab:checked,
+  notebook > header > tabs > tab:disabled:checked,
+  notebook > header.left > tabs > tab:checked, notebook > header.right > tabs > tab:checked,
+  notebook > header.left > tabs > tab:disabled:checked, notebook > header.right > tabs > tab:disabled:checked {
+    border-color: mix(#949494, @shift_bg_color, 00.30);
+    border-bottom-color: shade(mix(#949494, @shift_bg_color, 00.30), 1.02);
+    outline-color: mix(rgba(46, 52, 54, 0.4), rgba(0, 0, 0, 0.3), 00.30);
+    background-image: linear-gradient(to bottom, mix(@bg_color, @shift_bg_color, 00.30), mix(#d0d0d0, @shift_bg_color, 00.30) 60%, mix(#b8b8b8, @shift_bg_color, 00.30));
+/*  box-shadow: 1px 1px rgba(255, 255, 255, 0.25), inset 1px 1px 3px mix(#c4c4c4, @shift_bg_color, 00.30);*/
+    box-shadow: 0 0 0 2px mix(@bg_color, @shift_bg_color, 00.30), 1px 1px mix(mix(#fbfbfb, @shift_bg_color, 00.30), @bg_color, 0.2), inset 1px 1px 3px mix(#c4c4c4, @shift_bg_color, 00.30);
+    -gtk-icon-shadow: none; }
+
+notebook > header > tabs > tab label {
+  margin: 4px 0; }
+notebook > header > tabs > tab button.flat {
+  margin: 4px 4px; }

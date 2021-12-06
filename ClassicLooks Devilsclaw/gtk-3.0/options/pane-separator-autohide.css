@@ -1,0 +1,42 @@
+/**************************************************************************************
+This file is distributed under the GNU General Public License version 2 (a.k.a. GPL-v2)
+(c) 2019-2021 Virgil Mager - vvmager@gmail.com
+(c) 2019-2021 Information Technology Group - http://itgroup.ro
+**************************************************************************************/
+
+paned > separator:hover, paned > separator.wide:hover {
+  transition: box-shadow min-width margin background 0s;
+  transition-delay: 0.3s;
+  min-width: 16px;
+  min-height: 16px;
+  margin: 0px;
+  color: transparent;
+  background-color: transparent; }
+  paned > separator:selected {
+    background-image: image(@selected_bg_color); }
+paned.horizontal > separator:hover, paned.horizontal > separator.wide:hover {
+  transition: box-shadow min-width margin background 0s;
+  transition-delay: 0.3s;
+  box-shadow: none;
+  margin-left: -4px;
+  margin-right: -4px;
+  background: url("../assets/extras/separator-bg-lighter.png") center center repeat-y, /*url("../assets/extras/separator-vert-bg-top.png") center top no-repeat, url("../assets/extras/separator-vert-bg-bottom.png") center bottom no-repeat,*/ url("../assets/extras/separator-handle-vert.png") center center no-repeat, url("../assets/extras/separator-vert-lighter.png") center center repeat-y, url("../assets/extras/separator-line-horiz-lighter.png") center top no-repeat, url("../assets/extras/separator-line-horiz-lighter.png") center bottom no-repeat; }
+paned.vertical > separator:hover, paned.vertical > separator.wide:hover {
+  transition: box-shadow min-width margin background 0s;
+  transition-delay: 0.3s;
+  box-shadow: none;
+  margin-top: -4px;
+  margin-bottom: -4px;
+  background: url("../assets/extras/separator-bg-lighter.png") center center repeat-x, /*url("../assets/extras/separator-horiz-bg-left.png") left center no-repeat, url("../assets/extras/separator-horiz-bg-right.png") right center no-repeat,*/ url("../assets/extras/separator-handle-horiz.png") center center no-repeat, url("../assets/extras/separator-horiz-lighter.png") center center repeat-x, url("../assets/extras/separator-line-vert-lighter.png") left center no-repeat, url("../assets/extras/separator-line-vert-lighter.png") right center no-repeat; }
+/*
+paned.horizontal > :first-child, paned.horizontal > :last-child {
+  margin: 1px;
+  box-shadow: 0 0 0 1px mix(#c0c0c0, @shift_bg_color, 00.10); }
+paned.horizontal paned.horizontal > :first-child, paned.horizontal paned.horizontal > :last-child {
+  box-shadow: none; }
+paned.vertical > :first-child, paned.vertical > :last-child {
+  margin: 1px;
+  box-shadow: 0 0 0 1px mix(#c0c0c0, @shift_bg_color, 00.10); }
+paned.vertical paned.vertical > :first-child, paned.vertical paned.vertical > :last-child {
+  box-shadow: none; }
+*/

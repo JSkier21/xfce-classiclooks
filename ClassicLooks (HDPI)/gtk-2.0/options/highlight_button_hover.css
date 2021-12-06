@@ -1,0 +1,68 @@
+/**************************************************************************************
+This file is distributed under the GNU General Public License version 2 (a.k.a. GPL-v2)
+(c) 2019-2021 Virgil Mager - vvmager@gmail.com
+(c) 2019-2021 Information Technology Group - http://itgroup.ro
+**************************************************************************************/
+
+style "button" {
+	fg[PRELIGHT] = @button_fg_color
+	bg[PRELIGHT] = @button_bg_color
+	engine "murrine" {
+#		textstyle = 0
+	}
+}
+
+style "toolbar_button" {
+	fg[PRELIGHT] = @button_fg_color
+	bg[PRELIGHT] = @button_bg_color
+	engine "murrine" {
+#		textstyle = 0
+	}
+}
+
+style "treeview_header" {
+	fg[PRELIGHT] = @button_fg_color
+	bg[PRELIGHT] = @button_bg_color
+	engine "murrine" {
+#		textstyle = 0
+	}
+}
+
+style "combo_button" {
+	fg[PRELIGHT] = @button_fg_color
+	bg[PRELIGHT] = @button_bg_color
+	engine "murrine" {
+#		textstyle = 0
+	}
+}
+
+style "combobox" {
+	fg[PRELIGHT] = @button_fg_color
+	bg[PRELIGHT] = @button_bg_color
+	engine "murrine" {
+#		textstyle = 0
+	}
+}
+
+style "combobox_entry_button" {
+	fg[PRELIGHT] = @button_fg_color
+	bg[PRELIGHT] = @button_bg_color
+	engine "murrine" {
+#		textstyle = 0
+	}
+}
+
+style "set_text_color_to_fg_color_workaround" {
+	text[PRELIGHT] = @button_fg_color
+	engine "murrine" {
+#		textstyle = 0
+	}
+}
+
+style "radiocheck" {
+#	fg[PRELIGHT] = @button_fg_color
+#	bg[PRELIGHT] = @button_bg_color
+	engine "murrine" {
+#		textstyle = 0
+	}
+}

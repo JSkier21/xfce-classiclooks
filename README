@@ -1,0 +1,44 @@
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+~ This file last changed in version 1.0.0 ~
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+ABOUT
+=====
+ClassicLooks is a Gtk+ theme aimed at providing increased consistency across the most commonly used GUI toolkits (Gtk2/3, Qt4/5, wxWidgets2/3, OpenOffice3/4, LibreOffice6); additionally, ClassicLooks tries to be "compatible" with the default Gtk3 theme 'Adwaita' in the sense that an application GUI designed to look good on Adwaita should also look good on ClassicLooks.
+
+ClassicLooks currently supports only the XFCE desktop (the XFCE panels and the XFWM4 window manager); support for other desktop environments and/or window managers is planned for future releases.
+
+ClassicLooks relies upon, and/or is derived from:
+- Xfce Evolution Theme (http://xfce-evolution.sourceforge.net)
+- Gtk2 Murrine Engine (gtk2, wxWidgets2/3, qt4/5)
+- Qt5 Style Plugins (qt5)
+
+
+INSTALL/UNINSTALL
+=================
+The 'ClassicLooks' theme requires several dependencies to be installed, and it includes fixes for Qt applications running on XFCE and/or which use Gtk styling. For a proper installation/uninstallation please FOLLOW ALL THE INSTALL/UNINSTALL STEPS described in file 'ClassicLooks/TOOLS/SETUP/INSTALL' in this archive, sections 'INSTALLATION' and 'UNINSTALL'.
+
+IMPORTANT
+~~~~~~~~~
+The install/uninstall procedures MAY CHANGE FOR EACH NEW RELEASE, whereby requirements and/or setup steps may be added/changed/removed; any such changes are documented in the 'HISTORY' file.
+
+
+CUSTOMIZATION
+=============
+The 'ClassicLooks' theme provides several end-user tweaking options, see 'ClassicLooks/TOOLS/CONFIG/HACKING' file in this archive.
+
+
+HOMEPAGE
+========
+The 'ClassicLooks' theme is maintained at http://www.itgroup.ro/classiclooks and/or http://classiclooks.sourceforge.net
+
+
+LICENSE
+=======
+The 'ClassicLooks' package is distributed under the GNU General Public License version 2 (a.k.a. GPL-v2), see 'LICENSE' file in this archive.
+
+
+COPYRIGHT
+=========
+(c) 2019-2021 Virgil Mager - vvmager@gmail.com
+(c) 2019-2021 Information Technology Group - http://itgroup.ro

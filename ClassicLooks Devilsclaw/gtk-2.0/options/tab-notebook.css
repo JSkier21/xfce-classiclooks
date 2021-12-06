@@ -1,0 +1,13 @@
+/**************************************************************************************
+This file is distributed under the GNU General Public License version 2 (a.k.a. GPL-v2)
+(c) 2019-2021 Virgil Mager - vvmager@gmail.com
+(c) 2019-2021 Information Technology Group - http://itgroup.ro
+**************************************************************************************/
+
+style "notebook" {
+	bg[ACTIVE] = shade(0.94, mix(00.10, @shift_bg_color, @bg_color))
+	engine "murrine" {
+		gradient_shades = {0.85, 1.0, 1.0, 1.55}
+#		gradient_shades = {0.95, 0.95, 0.95, 0.95}
+	}
+}

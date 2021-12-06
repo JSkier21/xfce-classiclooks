@@ -1,0 +1,63 @@
+/**************************************************************************************
+This file is distributed under the GNU General Public License version 2 (a.k.a. GPL-v2)
+(c) 2019-2021 Virgil Mager - vvmager@gmail.com
+(c) 2019-2021 Information Technology Group - http://itgroup.ro
+**************************************************************************************/
+
+style "panel" {
+
+#	bg_pixmap[NORMAL] = "assets/panel.png"
+	bg[NORMAL]   = "#000000"
+   fg[NORMAL]   = "#bbbbbb"
+   text[NORMAL] = "#bbbbbb"
+
+#	bg[ACTIVE]   = shade(0.85, @selected_bg_color)
+#	bg[SELECTED] = "#ff0000"
+	fg[ACTIVE]   = "#ffffff"
+	text[ACTIVE] = "#ffffff"
+
+	bg[PRELIGHT]   = shade(1.0, @selected_bg_color)
+	fg[PRELIGHT]   = @selected_focused_fg_color
+	text[PRELIGHT] = @selected_focused_fg_color
+
+	xthickness = 1
+	ythickness = 2
+	engine "murrine" {
+      roundness = 2
+		contrast = 1.0
+		textstyle = 0
+		lightborderstyle = 0
+		lightborder_shade = 1.05
+	}
+}
+
+style "panel_button" {
+	GtkButton::inner-border           = {1, 1, 0, 0}
+
+	bg[NORMAL]   = "#000000"
+   fg[NORMAL]   = "#bbbbbb"
+   text[NORMAL] = "#bbbbbb"
+
+	bg[ACTIVE]   = shade(0.8, @selected_bg_color)
+   fg[ACTIVE]   = @selected_focused_fg_color
+   text[ACTIVE] = @selected_focused_fg_color
+
+	bg[PRELIGHT]   = shade(1.0, @selected_bg_color)
+   fg[PRELIGHT]   = @selected_focused_fg_color
+   text[PRELIGHT] = @selected_focused_fg_color
+
+	xthickness = 5
+	ythickness = 1
+	engine "murrine" {
+		roundness = 2
+		contrast = 0.5
+		lightborderstyle = 0
+		lightborder_shade = 1.4
+		border_shades = {0.7, 0.7}
+#		trough_shades = {0.1, 0.1}
+		gradient_shades = {1.1, 1.0, 1.0, 0.95}
+		reliefstyle = 0
+#		glowstyle = 1
+#		glow_shade = 0.7
+	}
+}

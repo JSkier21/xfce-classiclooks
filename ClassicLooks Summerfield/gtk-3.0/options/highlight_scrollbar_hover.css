@@ -1,0 +1,51 @@
+/**************************************************************************************
+This file is distributed under the GNU General Public License version 2 (a.k.a. GPL-v2)
+(c) 2019-2021 Virgil Mager - vvmager@gmail.com
+(c) 2019-2021 Information Technology Group - http://itgroup.ro
+**************************************************************************************/
+
+@define-color scrollbar_controls_hover_1 shade(@scrollbar_bg_color, 1.12);
+@define-color scrollbar_controls_hover_2 shade(@scrollbar_bg_color, 1.05);
+@define-color scrollbar_controls_hover_3 shade(@scrollbar_bg_color, 0.96);
+@define-color scrollbar_controls_border_hover shade(@scrollbar_bg_color, 0.8);
+
+scrollbar.vertical slider:hover, scrollbar.vertical .slider:hover,
+scrollbar.vertical button:hover, scrollbar.vertical .button:hover {
+  color: @scrollbar_fg_color;
+  border-color: @scrollbar_controls_border_hover;
+  box-shadow: -1px 0 @scrollbar_controls_border_hover, 1px 0 @scrollbar_controls_border_hover;
+  background-image: -gtk-gradient (linear, left top, right top, color-stop (0, @scrollbar_controls_hover_1), color-stop (0.5, @scrollbar_controls_hover_2), color-stop (1, @scrollbar_controls_hover_3)); }
+  scrollbar.vertical.fine-tune slider:hover, scrollbar.vertical.fine-tune .slider:hover {
+    box-shadow: -1px 0 @scrollbar_controls_border_hover, 1px 0 @scrollbar_controls_border_hover;
+	 background-image: -gtk-gradient (linear, right top, left top, color-stop (0, shade(@scrollbar_bg_color, 1.35)), color-stop (0.5, shade(@scrollbar_bg_color, 1.12)), color-stop (1, shade(@scrollbar_bg_color, 0.95))); }
+
+scrollbar.horizontal slider:hover, scrollbar.horizontal .slider:hover,
+scrollbar.horizontal button:hover, scrollbar.horizontal .button:hover {
+  color: @scrollbar_fg_color;
+  border-color: @scrollbar_controls_border_hover;
+  box-shadow: 0 -1px @scrollbar_controls_border_hover, 0 1px @scrollbar_controls_border_hover;
+  background-image: -gtk-gradient (linear, left top, left bottom, color-stop (0, @scrollbar_controls_hover_1), color-stop (0.5, @scrollbar_controls_hover_2), color-stop (1, @scrollbar_controls_hover_3)); }
+  scrollbar.horizontal.fine-tune slider:hover, scrollbar.horizontal.fine-tune .slider:hover {
+    box-shadow: 0 -1px @scrollbar_controls_border_hover, 0 1px @scrollbar_controls_border_hover;
+    background-image: -gtk-gradient (linear, left bottom, left top, color-stop (0, shade(@scrollbar_bg_color, 1.35)), color-stop (0.5, shade(@scrollbar_bg_color, 1.12)), color-stop (1, shade(@scrollbar_bg_color, 0.95))); }
+
+scrollbar.vertical button.up:hover, scrollbar.vertical .button.up:hover {
+  box-shadow: -1px 0 @scrollbar_controls_border_hover, 1px 0 @scrollbar_controls_border_hover, -1px -1px @scrollbar_controls_border_hover, 1px -1px @scrollbar_controls_border_hover; }
+  scrollbar.vertical button.up:not(:disabled):hover, scrollbar.vertical .button.up:not(:disabled) {
+    border-bottom: 1px solid @scrollbar_controls_border_hover; }
+scrollbar.vertical button.down:hover, scrollbar.vertical .button.down:hover {
+  box-shadow: -1px 0 @scrollbar_controls_border_hover, 1px 0 @scrollbar_controls_border_hover, -1px 1px @scrollbar_controls_border_hover, 1px 1px @scrollbar_controls_border_hover; }
+  scrollbar.vertical button.down:not(:disabled):hover, scrollbar.vertical .button.down:not(:disabled) {
+  border-top: 1px solid @scrollbar_controls_border_hover; }
+
+scrollbar.horizontal button.up:hover, scrollbar.horizontal .button.up:hover {
+  box-shadow: 0 -1px @scrollbar_controls_border_hover, 0 1px @scrollbar_controls_border_hover, -1px -1px @scrollbar_controls_border_hover, -1px 1px @scrollbar_controls_border_hover; }
+  scrollbar.horizontal button.up:not(:disabled):hover, scrollbar.horizontal .button.up:not(:disabled) {
+    border-right: 1px solid @scrollbar_controls_border_hover; }
+scrollbar.horizontal button.down:hover, scrollbar.horizontal .button.down:hover {
+  box-shadow: 0 -1px @scrollbar_controls_border_hover, 0 1px @scrollbar_controls_border_hover, 1px -1px @scrollbar_controls_border_hover, 1px 1px @scrollbar_controls_border_hover; }
+  scrollbar.horizontal button.down:not(:disabled):hover, scrollbar.horizontal .button.down:not(:disabled) {
+    border-left: 1px solid @scrollbar_controls_border_hover; }
+
+scrollbar button:hover, scrollbar .button:hover {
+  color: mix(@fg_color, @scrollbar_bg_color, 0.15); }

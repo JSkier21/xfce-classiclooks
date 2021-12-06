@@ -1,0 +1,34 @@
+/*******************************************************************/
+/*                        = Gtk-2 Tweaks =                         */
+/*          DO NOT CHANGE THE _ORDER_ OF THE LINES BELOW           */
+/*  See 'ClassicLooks/TOOLS/CONFIG/HACKING' file for instructions  */
+/*******************************************************************/
+
+/* Colors */
+gtk-color-scheme = "canvas_bg_color:#ffffff"
+gtk-color-scheme = "entry_bg_color:#ffffff"
+gtk-color-scheme = "menu_bg_color:#ffffff"
+gtk-color-scheme = "selected_bg_color:#4488ff"
+gtk-color-scheme = "selected_focused_fg_color:#ffffff"
+gtk-color-scheme = "selected_nofocus_fg_color:#222222"
+gtk-color-scheme = "accent_fg_color:#222222"
+gtk-color-scheme = "accent_bg_color:#4488ff"
+
+/* Widgets, do _not_ edit */
+include "widgets.css"
+
+/* Appearance */
+include "options/keyboard-navigation-off.css"
+include "options/button-pressed-sunken.css"
+include "options/default-button-themed.css"
+include "options/scrollbar-controls-contrast.css"
+include "options/scrollbar-decoration-off.css"
+include "options/pane-separator-auto.css"
+include "options/menu-separator-light.css"
+include "options/menu-selection-flat.css"
+include "options/menu-themed.css"
+include "options/tab-classic.css"
+include "options/panel-contrast.css"
+include "options/window-frame-themed.css"
+include "options/desktop-icon-background-off.css"
+include "options/dpi-low.css"
