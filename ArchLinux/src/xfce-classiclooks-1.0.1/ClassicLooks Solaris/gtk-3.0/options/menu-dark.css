@@ -1,0 +1,96 @@
+/**************************************************************************************
+This file is distributed under the GNU General Public License version 2 (a.k.a. GPL-v2)
+(c) 2019-2021 Virgil Mager - vvmager@gmail.com
+(c) 2019-2021 Information Technology Group - http://itgroup.ro
+**************************************************************************************/
+
+menu,
+.menu,
+.context-menu {
+  box-shadow: inset 0px 0px 1px 1px shade(@dark_bg_color, 0.72);
+  background-color: @dark_bg_color; }
+
+menu > arrow,
+.menu > arrow,
+.context-menu > arrow {
+  color: @dark_fg_color; }
+  menu > arrow:disabled,
+  .menu > arrow:disabled,
+  .context-menu > arrow:disabled {
+    color: shade(mix(@bg_color, @shift_bg_color, 00.30), 0.5); }
+menu > arrow.top,
+.menu > arrow.top,
+.context-menu > arrow.top {
+  border-style: none none solid none;
+  border-color: shade(@dark_bg_color, 0.84);
+  box-shadow: -1px -1px shade(@dark_bg_color, 1.05), inset 0 -1px shade(@dark_bg_color, 0.95); }
+menu > arrow.bottom,
+.menu > arrow.bottom,
+.context-menu > arrow.bottom {
+  border-style: solid none none none;
+  border-color: shade(@dark_bg_color, 0.84);
+  box-shadow: -1px 0 shade(@dark_bg_color, 1.05), inset 0 1px shade(@dark_bg_color, 1.05), 1px 1px shade(@dark_bg_color, 0.95); }
+
+menu menuitem,
+.menu menuitem,
+.context-menu menuitem {
+  color: @dark_fg_color; }
+  menu menuitem:disabled, menu menuitem:disabled label,
+  .menu menuitem:disabled, .menu menuitem:disabled label,
+  .context-menu menuitem:disabled, .context-menu menuitem:disabled label {
+    color: alpha(@dark_fg_color, 0.3);
+    text-shadow: 1px 1px alpha(@dark_fg_color, 0.05); }
+
+menu menuitem > arrow,
+.menu menuitem > arrow,
+.context-menu menuitem > arrow {
+  color: @dark_fg_color; }
+
+menu menuitem check:checked,
+modelbutton.flat check:checked,
+.menuitem.button.flat check:checked, 
+menu menuitem radio:checked,
+modelbutton.flat radio:checked,
+.menuitem.button.flat radio:checked,
+menu menuitem check:indeterminate,
+modelbutton.flat check:indeterminate,
+.menuitem.button.flat check:checked:indeterminate,
+menu menuitem radio:indeterminate,
+modelbutton.flat radio:indeterminate,
+.menuitem.button.flat radio:checked:indeterminate {
+  color: shade(@dark_fg_color, 0.95); }
+menu menuitem check:checked,
+modelbutton.flat check:checked,
+.menuitem.button.flat check:checked {
+  -gtk-icon-source: image(-gtk-recolor(url("../assets/override/check-symbolic.svg"))); }
+
+popover.background menu menuitem check:checked,
+popover.background modelbutton.flat check:checked,
+popover.background .menuitem.button.flat check:checked, 
+popover.background menu menuitem radio:checked,
+popover.background modelbutton.flat radio:checked,
+popover.background .menuitem.button.flat radio:checked {
+  color: @fg_color; }
+popover.background menu menuitem check:checked:hover,
+popover.background modelbutton.flat check:checked:hover,
+popover.background .menuitem.button.flat check:checked:hover, 
+popover.background menu menuitem radio:checked:hover,
+popover.background modelbutton.flat radio:checked:hover,
+popover.background .menuitem.button.flat radio:checked:hover {
+  color: @selected_focused_fg_color; }
+popover.background menu menuitem check:checked,
+popover.background modelbutton.flat check:checked,
+popover.background .menuitem.button.flat check:checked {
+  -gtk-icon-source: image(-gtk-recolor(url("../assets/override/check-symbolic.png"))); }
+popover.background menu menuitem check:checked:hover,
+popover.background modelbutton.flat check:checked:hover,
+popover.background .menuitem.button.flat check:checked:hover {
+  -gtk-icon-source: image(-gtk-recolor(url("../assets/override/check-symbolic.svg"))); }
+
+menu separator, .csd menu separator,
+.menu separator, .csd .menu separator {
+  background: shade(@dark_bg_color, 0.75);
+  color:  shade(@dark_bg_color, 0.84);
+  box-shadow: 0 1px shade(@dark_bg_color, 1.2);
+  margin: 2px 1px 2px 1px;
+}

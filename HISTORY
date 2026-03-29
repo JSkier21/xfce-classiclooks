@@ -3,6 +3,13 @@
 - odd minor versions (m.2k+1.r) represent development releases
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
+1.0.2
+=====
+- fixed flat appearance in 10 themes (ClassicLooks, Bronze, Crux, Devilsclaw, Graphite,
+  HDPI, Icelake, Raleigh, Redmond, Straw): switched menu-selection-flat to
+  menu-selection-bulged-slight for 3D menu highlight; switched menu-separator-light
+  to menu-separator-dented for embossed separators (applied to both gtk-2.0 and gtk-3.0)
+
 1.0.1
 =====
 - forked and maintained by Jeremy MountainJohnson (jskier@gmail.com)

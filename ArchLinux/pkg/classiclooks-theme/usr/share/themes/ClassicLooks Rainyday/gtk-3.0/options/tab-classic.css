@@ -1,0 +1,264 @@
+/**************************************************************************************
+This file is distributed under the GNU General Public License version 2 (a.k.a. GPL-v2)
+(c) 2019-2021 Virgil Mager - vvmager@gmail.com
+(c) 2019-2021 Information Technology Group - http://itgroup.ro
+**************************************************************************************/
+
+notebook > header {
+  padding: 0;
+  border-width: 1px;
+  border-color: mix(#b8b8b8, @shift_bg_color, 00.10);
+  background-image: none;
+  background-color: transparent; }
+  notebook > header:disabled {
+    background-image: none;
+	 box-shadow: none;
+	 background-color: mix(#e2e3e0, @shift_bg_color, 00.10); }
+
+notebook > header > * {
+  margin: 3px; }
+notebook > header.top > * {
+  margin-top: 0; }
+notebook > header.bottom > * {
+  margin-bottom: 0; }
+notebook > header.left > * {
+  margin-left: 0; }
+notebook > header.right > * {
+  margin-right: 0; }
+/*notebook > header > * > *, notebook > header.top > * > *, notebook > header.bottom > * > *, notebook > header.left > * > *, notebook > header.right > * > * {
+  margin: 0;}*/
+
+notebook > header > tabs > tab {
+  min-height: 20px;
+  outline-offset: -4px;
+  color: mix(#444444, mix(@shift_bg_color, #444444, 0.398), 00.10);
+  background-image: none;
+  box-shadow: none;
+  font-weight: normal; }
+notebook > header.top > tabs > tab, notebook > header.bottom > tabs > tab,
+notebook > header.top > tabs > tab:hover, notebook > header.bottom > tabs > tab:hover {
+  background-image: linear-gradient(to bottom, mix(#f8f8f8, @shift_bg_color, 00.10), mix(@bg_color, @shift_bg_color, 00.10) 50%, mix(#cccccc, @shift_bg_color, 00.10)); }
+notebook > header.left > tabs > tab, notebook > header.right > tabs > tab,
+notebook > header.left > tabs > tab:hover, notebook > header.right > tabs > tab:hover {
+  background-image: linear-gradient(to bottom, mix(#f8f8f8, @shift_bg_color, 00.10), mix(@bg_color, @shift_bg_color, 00.10) 50%, mix(#cccccc, @shift_bg_color, 00.10)); }
+
+notebook > header.top {
+  border-style: none none solid none;
+/*box-shadow: 0 -2px 0 1px mix(@bg_color, @shift_bg_color, 00.10);*/
+  margin: 4px 0 0 0; }
+  notebook > header.top:disabled {
+    background-color: mix(@bg_color, @shift_bg_color, 00.10);
+	 box-shadow: none; }
+notebook > header.top + * {
+  margin-top: -1px; }
+notebook > header.top > tabs > tab, notebook > header.top > tabs > tab:hover {
+  margin: 2px 0 0 -1px;
+  border-style: solid solid none solid;
+  border-radius: 3px 3px 0 0;
+  border-color: mix(#b0b0b0, @shift_bg_color, 00.10);
+  box-shadow: 0 1px mix(#a4a4a4, @shift_bg_color, 00.10), inset 0 1px alpha(#ffffff, 0.15), inset 1px 0 alpha(#ffffff, 0.15); }
+  notebook > header.top > tabs > tab:checked:disabled {
+    box-shadow: 0 3px 0 -1px mix(#e2e3e0, @shift_bg_color, 00.10); }
+  notebook > header.top > tabs > tab:checked,
+  notebook > header.top > tabs > tab:checked:hover {
+    margin-top: 0;
+	 border-color: mix(#a8a8a8, @shift_bg_color, 00.10);
+	 background-image: linear-gradient(to bottom, mix(#ffffff, @shift_bg_color, 00.10), mix(#f0f0f0, @shift_bg_color, 00.10) 40%, mix(@bg_color, @shift_bg_color, 00.10));
+	 box-shadow: 0 2px 0 -1px mix(@bg_color, @shift_bg_color, 00.10), inset 0 1px shade(mix(mix(@bg_color, @shift_bg_color, 00.10), @bg_color, 0.15), 1.11), inset 1px 0 alpha(#ffffff, 0.2); }
+/*notebook > header.top > tabs > tab:not(.reorderable-page), notebook > header.top > tabs > tab:not(.reorderable-page):hover {
+  margin-top: 7px; }
+  notebook > header.top > tabs > tab:not(.reorderable-page):checked, notebook > header.top > tabs > tab:not(.reorderable-page):checked:hover {
+    margin-top: 5px; }*/
+
+notebook > header.bottom {
+  border-style: solid none none none;
+/*box-shadow: 0 1px mix(#f8f8f8, @shift_bg_color, 00.10);*/
+  margin: 0 0 4px 0; }
+  notebook > header.bottom:disabled {
+    background-color: mix(@bg_color, @shift_bg_color, 00.10);
+	 box-shadow: none; }
+/*notebook > header.bottom + * {
+  margin-bottom: -1px; }*/
+notebook > header.bottom > tabs > tab, notebook > header.bottom > tabs > tab:hover {
+  margin: 0 0 2px -1px;
+  border-style: none solid solid solid;
+  border-radius: 0 0 3px 3px;
+  border-color: mix(#b0b0b0, @shift_bg_color, 00.10);
+  border-bottom-color: mix(#a0a0a0, @shift_bg_color, 00.10);
+  box-shadow: 0 -1px mix(#b4b4b4, @shift_bg_color, 00.10), inset 1px 0 alpha(#ffffff, 0.15); }
+  notebook > header.bottom > tabs > tab:checked:disabled {
+    box-shadow: 0 -3px 0 -1px mix(#e2e3e0, @shift_bg_color, 00.10); }
+  notebook > header.bottom > tabs > tab:checked,
+  notebook > header.bottom > tabs > tab:checked:hover {
+    margin-bottom: 0;
+	 border-color: mix(#a8a8a8, @shift_bg_color, 00.10);
+	 border-bottom-color: mix(#a0a0a0, @shift_bg_color, 00.10);
+	 background-image: linear-gradient(to bottom, mix(@bg_color, @shift_bg_color, 00.10), mix(@bg_color, @shift_bg_color, 00.10) 40%, mix(#d0d0d0, @shift_bg_color, 00.10));
+	 box-shadow: 0 -2px 0 -1px mix(@bg_color, @shift_bg_color, 00.10), inset 1px 0 alpha(#ffffff, 0.2); }
+
+notebook > header.left {
+  border-style: none solid none none;
+/*box-shadow: 0 1px mix(#f8f8f8, @shift_bg_color, 00.10);*/
+  margin: 0 0 0 4px; }
+  notebook > header.left:disabled {
+    background-color: mix(@bg_color, @shift_bg_color, 00.10);
+	 box-shadow: none; }
+notebook > header.left + * {
+  margin-left: -1px; }
+notebook > header.left > tabs > tab, notebook > header.left > tabs > tab:hover {
+  margin: -1px 0 0 2px;
+  border-style: solid none solid solid;
+  border-radius: 3px 0 0 3px;
+  border-color: mix(#a8a8a8, @shift_bg_color, 00.10);
+  box-shadow: 1px 0 mix(#b4b4b4, @shift_bg_color, 00.10), inset 0 1px alpha(#ffffff, 0.15); }
+  notebook > header.left > tabs > tab:checked:disabled {
+    box-shadow: 3px 0 0 -1px mix(#e2e3e0, @shift_bg_color, 00.10); }
+  notebook > header.left > tabs > tab:checked,
+  notebook > header.left > tabs > tab:checked:hover {
+    margin-left: 0;
+	 border-color: mix(#a0a0a0, @shift_bg_color, 00.10);
+	 background-image: image(mix(@bg_color, @shift_bg_color, 00.10));
+	 box-shadow: 2px 0 0 -1px mix(@bg_color, @shift_bg_color, 00.10); }
+
+notebook > header.right {
+  border-style: none none none solid;
+/*box-shadow: 0 1px mix(#f8f8f8, @shift_bg_color, 00.10);*/
+  margin: 0 4px 0 0; }
+  notebook > header.right:disabled {
+    background-color: mix(@bg_color, @shift_bg_color, 00.10);
+	 box-shadow: none; }
+/*notebook > header.left + * {
+  margin-left: -1px; }*/
+notebook > header.right > tabs > tab, notebook > header.right > tabs > tab:hover {
+  margin: -1px 2px 0 0;
+  border-style: solid solid solid none;
+  border-radius: 0 3px 3px 0;
+  border-color: mix(#a8a8a8, @shift_bg_color, 00.10);
+  box-shadow: -1px 0 mix(#b4b4b4, @shift_bg_color, 00.10), inset 0 1px alpha(#ffffff, 0.15); }
+  notebook > header.right > tabs > tab:checked:disabled {
+    box-shadow: -3px 0 0 -1px mix(#e2e3e0, @shift_bg_color, 00.10); }
+  notebook > header.right > tabs > tab:checked,
+  notebook > header.right > tabs > tab:checked:hover {
+    margin-right: 0;
+	 border-color: mix(#a0a0a0, @shift_bg_color, 00.10);
+	 background-image: image(mix(@bg_color, @shift_bg_color, 00.10));
+	 box-shadow: -2px 0 0 -1px mix(@bg_color, @shift_bg_color, 00.10); }
+
+notebook > header > tabs,
+notebook > header > tabs:disabled {
+  border: none;
+  box-shadow: none;
+  background-image: none;
+  margin: 0; }
+notebook > header.top > tabs > tab:disabled, notebook > header.bottom > tabs > tab:disabled, notebook > header.left > tabs > tab:disabled, notebook > header.right > tabs > tab:disabled {
+  background-image: linear-gradient(to bottom, mix(#e8e8e8, @shift_bg_color, 00.10), mix(#d0d0d0, @shift_bg_color, 00.10));
+  border-color: mix(#b0b0b0, @shift_bg_color, 00.10);
+  box-shadow: none; }
+  notebook > header > tabs > tab:disabled:checked,
+  notebook > header.left > tabs > tab:disabled:checked, notebook > header.right > tabs > tab:disabled:checked {
+    background-image: image(mix(#e2e3e0, @shift_bg_color, 00.10));
+	 border-color: mix(#a8a8a8, @shift_bg_color, 00.10); }
+notebook > header.top > tabs, notebook > header.bottom > tabs {
+  padding: 0 6px; }
+  notebook > header.top > tabs:not(:only-child), notebook > header.bottom > tabs:not(:only-child) {
+    margin-left: 3px;
+	 margin-right: 3px; }
+  notebook > header.top > tabs:not(:only-child):first-child, notebook > header.bottom > tabs:not(:only-child):first-child {
+    margin-left: -1px; }
+  notebook > header.top > tabs:not(:only-child):last-child, notebook > header.bottom > tabs:not(:only-child):last-child {
+    margin-right: -1px; }
+notebook > header.left > tabs, notebook > header.right > tabs {
+  padding: 6px 0;
+  background-image: none; }
+  notebook > header.left > tabs:not(:only-child), notebook > header.right > tabs:not(:only-child) {
+    margin-top: 3px;
+	 margin-bottom: 3px; }
+	 notebook > header.left > tabs:not(:only-child):first-child, notebook > header.right > tabs:not(:only-child):first-child {
+	   margin-top: -1px; }
+		notebook > header.left > tabs:not(:only-child):last-child, notebook > header.right > tabs:not(:only-child):last-child {
+		margin-bottom: -1px; }
+
+notebook > header > tabs > tab, notebook > header > tabs > tab label,
+notebook > header > tabs > tab:disabled, notebook > header > tabs > tab:disabled label {
+  text-shadow: none; }
+  notebook > header > tabs > tab:not(:disabled):checked label {
+    color: @fg_color; }
+
+notebook > header > tabs > tab label {
+  margin: 3px 0; }
+  notebook > header.left > tabs > tab label, notebook > header.right > tabs > tab label {
+    margin: 4px 0; }
+notebook > header > tabs > tab button.flat {
+  padding: 0;
+  margin: 3px 3px;
+  min-width: 18px;
+  min-height: 18px; }
+/*  notebook > header > tabs > tab:checked:active button.flat {
+    margin: 3px; }
+  notebook > header > tabs > tab:checked button.flat {
+    transition: margin;
+	 transition-delay: 0.3s;
+	 min-height: 16px;
+	 margin: 4px 3px; }*/
+
+/*notebook > header > tabs > tab :first-child:not(:only-child) {
+  padding: 3px; }*/
+
+notebook > header > tabs > arrow {
+  min-height: 16px;
+  min-width: 16px;
+  border-radius: 0;
+  margin: 0 }
+  notebook > header > tabs > arrow:hover:not(:active) {
+    background-clip: padding-box;
+	 background-image: none;
+	 background-color: mix(rgba(255, 255, 255, 0.3), rgba(0, 0, 0, 0.3), 00.10);
+	 border-color: transparent;
+	 box-shadow: none; }
+  notebook > header > tabs > arrow:disabled {
+    border-color: transparent;
+	 background-color: transparent;
+	 background-image: none;
+	 text-shadow: none;
+	 -gtk-icon-shadow: none; }
+  notebook > header.top > tabs > arrow {
+    border-top-style: none; }
+  notebook > header.bottom > tabs > arrow {
+    border-bottom-style: none; }
+  notebook > header.top > tabs > arrow, notebook > header.bottom > tabs > arrow {
+    margin-left: -5px;
+	 margin-right: -5px;
+	 padding-left: 4px;
+	 padding-right: 4px; }
+  notebook > header.left > tabs > arrow {
+    border-left-style: none; }
+  notebook > header.right > tabs > arrow {
+    border-right-style: none; }
+  notebook > header.left > tabs > arrow, notebook > header.right > tabs > arrow {
+    margin-top: -5px;
+	 margin-bottom: -5px;
+	 padding-top: 4px;
+	 padding-bottom: 4px; }
+
+/*notebook {
+  border: 1px none #ff0000;
+  box-shadow: 0 0 0 1px #0000ff; }*/
+
+notebook > stack:first-child:not(:only-child) {
+  border: 1px none #ff0000;
+  margin: 1px; }
+notebook > header.top + *:not(:only-child) {
+  border: 1px none #ff0000;
+  margin: 1px 0 0 0; }
+notebook > header.left + *:not(:only-child) {
+  border: 1px none #ff0000;
+  margin: 0 0 0 1px; }
+
+/*notebook > header, notebook > header.top, notebook > header.bottom, notebook > header.left, notebook > header.right {
+  border: 1px solid #0000ff;
+  box-shadow: none; }*/
+
+/*notebook > header.top > tabs > tab:checked:disabled, notebook > header.bottom > tabs > tab:checked:disabled, notebook > header.left > tabs > tab:checked:disabled, notebook > header.right > tabs > tab:checked:disabled,
+notebook > header.top > tabs > tab:hover, notebook > header.bottom > tabs > tab:hover, notebook > header.left > tabs > tab:hover, notebook > header.right > tabs > tab:hover,
+notebook > header.top > tabs > tab:checked, notebook > header.bottom > tabs > tab:checked, notebook > header.left > tabs > tab:checked, notebook > header.right > tabs > tab:checked {
+  box-shadow: none; }*/

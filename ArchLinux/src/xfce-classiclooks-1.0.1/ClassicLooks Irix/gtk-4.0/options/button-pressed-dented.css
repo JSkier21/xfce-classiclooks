@@ -1,0 +1,71 @@
+/**************************************************************************************
+This file is distributed under the GNU General Public License version 2 (a.k.a. GPL-v2)
+(c) 2019-2021 Virgil Mager - vvmager@gmail.com
+(c) 2019-2021 Information Technology Group - http://itgroup.ro
+**************************************************************************************/
+
+  button:active, button:checked,
+  button.flat:active, button.flat:checked,
+  button.titlebutton:active, button.titlebutton:checked,
+  .inline-toolbar button:active, .inline-toolbar button:checked,
+  notebook > header > tabs > arrow:active, notebook > header > tabs > arrow:checked {
+    color: mix(@fg_color, mix(@shift_bg_color, @fg_color, 0.398), 00.30);
+    outline-color: mix(rgba(46, 52, 54, 0.3), rgba(0, 0, 0, 0.3), 00.30);
+    border-color: mix(#b6b6b3, @shift_bg_color, 00.30);
+    border-top-color: mix(#b0b0b0, @shift_bg_color, 00.30);
+    background-image: linear-gradient(to top, mix(#f0f0f0, @shift_bg_color, 00.30), mix(@bg_color, @shift_bg_color, 00.30) 50%, mix(#c8c8c8, @shift_bg_color, 00.30));
+    box-shadow: none;
+    -gtk-icon-shadow: none; }
+/* V0 (no highlighting of checked active buttons) */
+  nothing.nothing {
+/* V1 (stays highlighted when active: no flicker when un-pressing but inconsistent with gtk2)
+  :not(.linked) > button:not(.default):not(.destructive-action):not(.suggested-action):not(.close):not(.maximize):not(.minimize):not(.restore):checked:hover,
+  :not(.linked) > combobox > box > button.combo:checked:hover,
+  .inline-toolbar :not(.linked) > toolbutton > button:checked:hover,
+  .linked > button:only-child:checked:hover,
+  .linked > button:only-child.titlebutton:checked:hover,
+  .inline-toolbar .linked > toolbutton:only-child > button:checked:hover,
+  :not(.linked) > button:not(.default):not(.destructive-action):not(.suggested-action):not(.close):not(.maximize):not(.minimize):not(.restore):active:hover,
+  :not(.linked) > combobox > box > button.combo:active:hover,
+  .inline-toolbar :not(.linked) > toolbutton > button:active:hover,
+  .linked > button:only-child:active:hover,
+  .linked > button:only-child.titlebutton:active:hover,
+  .inline-toolbar .linked > toolbutton:only-child > button:active:hover { */
+/* V2 (not highlighted when active, like gtk2)
+  :not(.linked) > button:not(:active):checked:hover,
+  :not(.linked) > button.titlebutton:not(:active):checked:hover,
+  :not(.linked) > combobox > box > button.combo:not(:active):checked:hover,
+  .inline-toolbar :not(.linked) > toolbutton > button:not(:active):checked:hover,
+  .linked > button:not(:active):only-child:checked:hover,
+  .linked > button:not(:active):only-child.titlebutton:checked:hover,
+  .inline-toolbar .linked > toolbutton:not(:active):only-child > button:checked:hover { */
+    background-image: linear-gradient(to top, mix(#ffffff, @shift_bg_color, 00.30), mix(#f0f0f0, @shift_bg_color, 00.30) 50%, mix(#e0e0e0, @shift_bg_color, 00.30));
+    background-image: linear-gradient(to top, shade(mix(mix(@bg_color, @shift_bg_color, 00.30), @bg_color, 0.15), 1.08), shade(mix(mix(@bg_color, @shift_bg_color, 00.30), @bg_color, 0.15), 1.04) 50%, shade(mix(mix(@bg_color, @shift_bg_color, 00.30), @bg_color, 0.15), 0.98));
+    border-color: mix(#b4b4b4, @shift_bg_color, 00.30);
+    border-top-color: mix(#b0b0b0, @shift_bg_color, 00.30);
+    border-bottom-color: mix(#b8b8b8, @shift_bg_color, 00.30);
+    transition: all 50ms cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    text-shadow: none; }
+
+    @define-color default_button_pressed_border_color shade(mix(#949494, @shift_bg_color, 00.30), 0.5);
+    @import "button-pressed-dented_tab.css";
+
+    button:disabled:active, button:disabled:checked,
+    button.titlebutton:disabled:active, button.titlebutton:disabled:checked,
+    .inline-toolbar button:disabled:active, .inline-toolbar button:disabled:checked,
+    notebook > header > tabs > arrow:disabled:active, notebook > header > tabs > arrow:disabled:checked {
+      outline-color: mix(rgba(46, 52, 54, 0.3), rgba(0, 0, 0, 0.3), 00.30);
+      border-color: mix(#b8b8b8, @shift_bg_color, 00.30);
+      border-top-color: mix(#b4b4b4, @shift_bg_color, 00.30);
+      background-image: linear-gradient(to top, mix(#dcdcdc, @shift_bg_color, 00.30), mix(#d8d8d8, @shift_bg_color, 00.30) 50%, mix(#cccccc, @shift_bg_color, 00.30));
+      box-shadow: none;
+      -gtk-icon-shadow: none; }
+      button:disabled:active, button:disabled:active label,
+      button:disabled:checked, button:disabled:checked label,
+      button.titlebutton:disabled:active, button.titlebutton:disabled:active label,
+      button.titlebutton:disabled:checked, button.titlebutton:disabled:checked label,
+      .inline-toolbar button:disabled:active, .inline-toolbar button:disabled:active label,
+      .inline-toolbar button:disabled:checked, .inline-toolbar button:disabled:checked label,
+      notebook > header > tabs > arrow:disabled:active, notebook > header > tabs > arrow:disabled:active label,
+      notebook > header > tabs > arrow:disabled:checked, notebook > header > tabs > arrow:disabled:checked label {
+        color: mix(#767978, @shift_bg_color, 00.30); }

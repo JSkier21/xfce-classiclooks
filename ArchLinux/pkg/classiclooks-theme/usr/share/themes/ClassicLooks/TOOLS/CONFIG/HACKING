@@ -1,0 +1,135 @@
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+~ This file last changed in version 2.0.0 ~
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+IMPORTANT
+=========
+Each time you install/update the ClassicLooks theme, ANY HACKS THAT YOU HAVE MADE TO YOUR PREVIOUS INSTALLATION WILL BE LOST as part of the install procedure (see 'INSTALL' file). A straight-forward way to work around this problem, although a bit tedious, is to create a 'my-classiclooks-hacks' file in which you should write down any teaks you have made to your installation (e.g. for an existing "sub-theme", or for a new "sub-theme" that you have created), such that you can easily re-apply them to each new update/installation.
+- Caution: you should create your 'my-classiclooks-hacks' file in a _persistent standard location_ (e.g. in your theme folder '~/.themes'); in particular, do _not_ create this file inside any of ClassicLooks theme's folders, as these folders get deleted each time you update/install a new version.
+
+HACKING
+=======
+ClassicLooks is a _LIGHT_ theme (dark foreground/light background), and it _cannot_ be easily hacked into a dark theme in the current version. However, certain end-user customization tweaks are possible for each of the existing "sub-themes", and new self-contained ClassicLooks-based themes can be created.
+
+Scrollbars and Sliders Settings
+-------------------------------
+The default behavior of scrollbars in Gtk3 has changed from Gtk2 in the sense that, when clicking above/below the scrollbar knob, the knob moves to the point-of-click (by default) instead of moving one page up/down (the latter is the Gtk2 behavior).
+
+The Gtk3 scrollbar behavior is set globally for all ClassicLooks "sub-themes" by the line 'gtk-primary-button-warps-slider=true/false' in the 'ClassicLooks/gtk-3.0/settings.ini' file; note however that there is a problem with setting 'gtk-primary-button-warps-slider=false', namly that not only scrollbars are affected, but rather _all_ widgets that are using GtkRange, including e.g. GtkScale which is commonly used as a "seek bar" in media players etc, such that Gtk3 seekbars will move in increments and not to the point-of-click.
+
+The 'ClassicLooks' theme chooses to preserve scrollbar consistency with Gtk2, which implies that seekbar knobs will also move in increments and _not_ to the point-of-click. You can still use Gtk3 seekbars conveniently by placing the mouse pointer anywhere over the seekbar slider and then use your mouse wheel (or trackpad, etc) to rapidly change the seek position close to a desired point, or by dragging the seekbar knob to a desired point, or by hold the <ALT> key when clicking on the scrollbar.
+
+Hacking: you can make the seekbars behave in the default Gtk3 mode (i.e. move the seekbar knob to the point-of-click) by setting 'gtk-primary-button-warps-slider=true' in the 'ClassicLooks/gtk-3.0/settings.ini' file, but this will also change the scrollbars' behavior to point-of-click (note that this setting in 'ClassicLooks/gtk-3.0/settings.ini' will change the scrollbars/seekbars behavior for all ClassicLooks sub-themes).
+
+Appearance settings
+-------------------
+Various appearance options for widgets can be easily changed for each ClassicLooks "sub-theme" (e.g. ClassicLooks, ClassicLooks Bronze, etc) by editing _BOTH_ the files 'gtk-2.0/tweaks.css' _AND_ 'gtk-3.0/tweaks.css' inside each sub-theme and changing the filenames which have the form 'key-name-XXX.css' as follows:
+- for keyboard navigation options, set the file name 'keyboard-navigation-XXX.css' to:
+  - 'keyboard-navigation-off.css': disable focus rectangles and menu accelerators
+  - 'keyboard-navigation-on.css': enable focus rectangles and menu accelerators
+    - note: applications tend to respond inconsistently to these settings
+- for pressed buttons geometry options, set the file name 'button-pressed-XXX.css' to:
+  - 'button-pressed-sunken': pressed buttons are sunken
+  - 'button-pressed-dented': pressed buttons are bent inwards
+    - note: the 'button-pressed-dented' option works only for gtk3 widgets
+- for tab geometry options, set the file name 'tab-XXX.css' to:
+  - 'tab-classic.css': classic tabs (bent outwards)
+  - 'tab-button.css': classic tabs on gtk2, buttons on gtk3
+  - 'tab-flat.css': flat tabs on gtk2, adwaita-style tabs on gtk3
+  - 'tab-notebook.css': tabs bent inwards on gtk2, tabs with underline hinting on gtk3
+- for paned windows separators, set the file name 'pane-separator-XXX.css' to:
+  - 'pane-separator-auto.css': separator width determined by apps (like adwaita)
+  - 'pane-separator-wide.css': force wide separators
+- for menu selection options, set the file name 'menu-selection-XXX.css' to:
+  - 'menu-selection-flat.css': flat menu selection
+  - 'menu-selection-dented.css': menu selection is bent inwards
+  - 'menu-selection-bulged.css': menu selection is bent outwards
+  - 'menu-selection-bulged-slight.css': menu selection is slightly bent outwards
+  - 'menu-selection-bulged-rounded.css': bulged menu selection with rounded border
+- for menu separator options, set the file name 'menu-separator-XXX.css' to:
+  - 'menu-separator-light.css': flat light-colored menu separators
+  - 'menu-separator-dark.css': flat darker-colored menu separators
+  - 'menu-separator-dented.css': dented menu separators
+    - note: for 'menu-separator-dented.css' the relief effect can become not/barely/unpleasently visible on very light menu backgrounds
+- for default button colorization options, set the file name 'default-button-XXX.css' to:
+  - 'default-button-off.css': do not highlight the default buttons
+  - 'default-button-contrast.css': use contrast for highting the default buttons
+  - 'default-button-themed.css': colorize the default buttons based on the theme colors
+  - 'default-button-accent.css': colorize the default buttons with 'accent_bg_color' value (see 'Accent colors settings' paragraph below)
+- for scrollbar controls colorization options, set the file name 'scrollbar-controls-XXX.css' to:
+  - 'scrollbar-controls-contrast.css': use theme base color
+  - 'scrollbar-controls-contrast-flat.css': flat scrolllbars, use theme base color
+  - 'scrollbar-controls-themed.css': themed colorization
+  - 'scrollbar-controls-accent.css': use 'accent_fg/bg_color' values (see 'Accent color settings' paragraph below)
+  - 'scrollbar-controls-hover-themed.css': use theme base color for scrollbar controls, and themed colorization for hovered scrollbar controls
+  - 'scrollbar-controls-hover-accent.css': use theme base color for scrollbar controls, and colorize hovered scrollbar controls with 'accent_fg/bg_color' values (see 'Accent color settings' paragraph below)
+- for scrollbar decoration options, set the file name 'scrollbar-decoration-XXX.css' to:
+  - 'scrollbar-decoration-off.css': do not decorate scrollbars
+  - 'scrollbar-decoration-on.css': decorate scrollbars
+    - note: currently only the scrollbar haldles are decorated
+- for menu colorization options, set the file name 'menu-XXX.css' to:
+  - 'menu-themed.css': fully themed menu
+  - 'menu-dark.css': dark menu with theme-based colorization of menu selection
+- for xfce panel colorization options, set the file name 'panel-XXX.css' to:
+  - 'panel-themed.css': fully themed panel
+  - 'panel-contrast.css': monochrome panel with theme's base color and contrast-based colorization of pressed buttons
+  - 'panel-dark.css': dark panel with theme-based colorization of pressed buttons
+  - 'panel-black.css': flat black panel with theme-based colorization of pressed buttons
+- for window frame colorization options, set the file name 'window-frame-XXX.css' to:
+  - 'window-frame-themed.css': themed window frames
+  - 'window-frame-dark.css': dark window frames
+- for desktop icons' background options, set the file name 'desktop-icon-background-XXX.css' to:
+  - 'desktop-icon-background-off.css': don't highlight the desktop icons' labels
+  - 'desktop-icon-background-on.css': set a translucent background color for desktop icons' labels
+- for adjusting the smallest-size controls to make them more ergonomic on various DPI displays, set the file name 'dpi-XXX.css' to:
+  - 'dpi-low.css': adequate for low to medium DPI displays
+  - 'dpi-high.css': adequate for high DPI displays
+    - note: themes that use 'dpi-high' should be used in conjunction with the 'ClassicLooks XFWM4 (HDPI)' window manager theme and larger font sizes (for both the window manager theme and the display theme)
+
+Accent colors settings
+----------------------
+The following colors can be easily changed for each ClassicLooks "sub-theme" (e.g. ClassicLooks, ClassicLooks Bronze, etc) by editing the corresponding hex value in the 'gtk-2.0/tweaks.css' _AND_ 'gtk-3.0/tweaks.css' files of each sub-theme:
+- 'canvas_bg_color': background color of (most) text and drawing areas
+- 'entry_bg_color': background color of entries (on Gtk2 this setting may affect GtkTreeView)
+- 'menu_bg_color': background color of menus and popups
+- 'selected_focused_fg_color': foreground color for focused selected items
+- 'selected_nofocus_fg_color': foreground color for selected items which are not focused
+- 'selected_bg_color': background color for selected items
+- 'accent_fg_color': foreground color used by some 'scrollbar-controls-XXX' modes (see 'Appearance setting' paragraph above)
+- 'accent_bg_color': background color used by some 'scrollbar-controls-XXX' modes and 'default-button-accent' mode (see 'Appearance setting' paragraph above)
+
+Base color settings (ONLY FOR THE DARING!)
+------------------------------------------
+Because of the history of this theme (adaptation from adwaita:gtk3 and ambiance:gtk2, which i consider both to be pretty complete themes), the method for changing the background color of windows and widgets (a.k.a. the theme's "base color") is a bit convoluted, and it only allows for relatively small variations for the windows' and widgets' background colors.
+
+Specifically, the background color of windows and widgets (including the widget borders, highlight tones, etc) is determined starting from a light-grey "base value" (#e8e7ea), which is then "pulled towards" a COLOR TONE with a certain PULL STRENGTH
+- the color tone is a color notation of the form '#rrggbb'
+- the pull strength is a number of the form '00.nn'
+For example, setting the color tone to #99ddff will designate a fluorescent-blue color tone, and setting the pull stregth to 00.20 will determine a moderate color satuation, thus resulting in a light-blue color.
+
+In order to tweak the background color for a "sub-theme's" windows and widgets, enter your "sub-theme's" folder (e.g. '~/.themes/ClassicLooks', '~/.themes/ClassicLooks Bronze', etc), open the file 'themecolor.sh' in a text editor, and then locate the string of the form "#rrggbb/00.nn": this string determines the theme's 'color_tone/pull_strength' value pair; then:
+  a) change the color_tone to the desired value toward which the background color will be shifted (e.g. setting the color tone to "#880088" will create a purple-ish theme)
+  b) change the pull_strength value to determine the color saturation; this value MUST be of the form '00.nn' (you will have to experiment with this value until you'll get the desired effect)
+  c) save, and then execute, the 'themecolor.sh' script
+
+IMPORTANT: running the 'themecolor.sh' script for changing a sub-theme's base color relies on a file found inside the 'ClassicLooks' "base theme" folder (namely 'set-theme-color.sh' in sub-folder 'ClassicLooks/TOOLS/CONFIG/lib'); consequently, YOU MUST ALWAYS HAVE THE 'ClassicLooks' BASE THEME FOLDER INSTALLED WHEN RUNNING THE 'themecolor.sh' SCRIPT FROM ANY SUB-THEME FOLDER, or else running the script will exit with an error and will have no effect.
+
+Guidelines for generating a theme background color
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+- the brightness of the color tone, i.e. the _average_ between its RGB components, should be UP TO #80 (e.g. a value of #ff8000 is okay, but #ff8080 is too large), and the pull strength value MUST be of the form '00.nn' and it SHOUD be up to 00.30 (i.e. try to avoid using values larger than 00.30)
+- as a rule of thumb, try to use LOWER BRIGHTNESS VLUES for the color tone, and this will implicitly require lower values for the '00.nn' pull strength for achieving the same background color (e.g '#886600/00.20' generates almost the same background color as '#B4A474/00.40', but the first option should be used because it has lower brightness and pull stregth values). Using brightness values higher than #80 will result in lower contrasts for text and border lines, and using pull strength values higher than 00.25 may create unpleasant shadows under text (depending also on the color tone) and will reduce the contrast for borders and highlights
+
+Creating your own ClassicLooks-based theme
+==========================================
+You can easily create a new _self-contained_ ClassicLooks-based theme as follows:
+  1) first create a copy OF THE BASE THEME FOLDER 'ClassicLooks' to a new folder, and name the new folder considering the following:
+    - if the folder name of your new theme starts with 'ClassicLooks' (e.g. 'ClassicLooks MyCustomTheme') then your theme will be automatically removed by the install/uninstall procedures described in the 'INSTALL' file
+    - if the folder name of your new theme does _NOT_ start with 'ClassicLooks' (e.g. 'Classiclooks MyCustomTheme') then it will _NOT_ be removed by the install/uninstall procedures described in the 'INSTALL' file, and your theme will remain usable as-is alongside a new ClassicLooks update
+  2) set your theme's accent colors by following the procedure described in the 'Accent colors settings' paragraph above
+  3) set your theme's windows and widgets background color by following the procedure described in the 'Base color settings' paragraph above
+  4) set your theme's appearance options by following the procedure described in the 'Appearance settings' paragraph above
+
+After you have finished the procedure described above (steps 1...4), you can archive the resulting display theme folder (e.g. 'ClassicLooks MyCustomTheme') _together with_ the 'ClassicLooks XFWM4' and 'ClassicLooks XFWM4 (HDPI)' window manager folders, and the resulting package (e.g. 'ClassicLooks-MyCustomTheme.zip') will contain all the necessary files required for the theme to be installed as an independent, stand-alone component on an Xfce machine (including the installation and hacking instructions).
+
+---
+Have fun!

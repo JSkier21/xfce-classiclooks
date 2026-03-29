@@ -1,0 +1,16 @@
+/**************************************************************************************
+This file is distributed under the GNU General Public License version 2 (a.k.a. GPL-v2)
+(c) 2019-2021 Virgil Mager - vvmager@gmail.com
+(c) 2019-2021 Information Technology Group - http://itgroup.ro
+**************************************************************************************/
+
+style "scrollbar" {
+	bg[NORMAL] = mix(00.30, @shift_bg_color, @bg_color)
+	bg[ACTIVE] = shade(1.07, mix(00.30, @shift_bg_color, @bg_color))
+	bg[PRELIGHT] = shade(1.07, mix(00.30, @shift_bg_color, @bg_color))
+	bg[INSENSITIVE] = mix(00.30, @shift_bg_color, @bg_color)
+	engine "murrine"
+	{
+		gradient_shades = {1.0, 1.0, 1.0, 1.0}
+	}
+}

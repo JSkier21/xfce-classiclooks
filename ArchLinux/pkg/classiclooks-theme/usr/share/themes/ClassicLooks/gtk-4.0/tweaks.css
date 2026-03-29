@@ -1,0 +1,34 @@
+/*******************************************************************/
+/*                        = Gtk-3 Tweaks =                         */
+/*          DO NOT CHANGE THE _ORDER_ OF THE LINES BELOW           */
+/*  See 'ClassicLooks/TOOLS/CONFIG/HACKING' file for instructions  */
+/*******************************************************************/
+
+/* Colors */
+@define-color canvas_bg_color #ffffff;
+@define-color entry_bg_color #ffffff;
+@define-color menu_bg_color #ffffff;
+@define-color selected_bg_color #4488ff;
+@define-color selected_focused_fg_color #ffffff;
+@define-color selected_nofocus_fg_color #222222;
+@define-color accent_fg_color #222222;
+@define-color accent_bg_color #4488ff;
+
+/* Widgets, do _not_ edit */
+@import url("widgets.css");
+
+/* Appearance */
+@import "options/keyboard-navigation-off.css";
+@import "options/button-pressed-sunken.css";
+@import "options/default-button-themed.css";
+@import "options/scrollbar-controls-contrast.css";
+@import "options/scrollbar-decoration-off.css";
+@import "options/pane-separator-auto.css";
+@import "options/menu-separator-light.css";
+@import "options/menu-selection-flat.css";
+@import "options/menu-themed.css";
+@import "options/tab-classic.css";
+@import "options/panel-contrast.css";
+@import "options/window-frame-themed.css";
+@import "options/desktop-icon-background-off.css";
+@import "options/dpi-low.css";

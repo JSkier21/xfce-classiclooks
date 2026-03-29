@@ -1,0 +1,54 @@
+/**************************************************************************************
+This file is distributed under the GNU General Public License version 2 (a.k.a. GPL-v2)
+(c) 2019-2021 Virgil Mager - vvmager@gmail.com
+(c) 2019-2021 Information Technology Group - http://itgroup.ro
+**************************************************************************************/
+
+@define-color scrollbar_controls_hover_1 shade(@scrollbar_bg_color, 1.2);
+@define-color scrollbar_controls_hover_2 shade(@scrollbar_bg_color, 1.15);
+@define-color scrollbar_controls_hover_3 shade(@scrollbar_bg_color, 1.0);
+@define-color scrollbar_controls_border_hover shade(@scrollbar_bg_color, 0.8);
+
+@define-color scrollbar_controls_normal_1 shade(@scrollbar_bg_color, 1.12);
+@define-color scrollbar_controls_normal_2 shade(@scrollbar_bg_color, 1.05);
+@define-color scrollbar_controls_normal_3 shade(@scrollbar_bg_color, 0.95);
+@define-color scrollbar_controls_border_normal shade(@scrollbar_bg_color, 0.75);
+
+scrollbar.vertical slider, scrollbar.vertical .slider,
+scrollbar.vertical button, scrollbar.vertical .button {
+  color: @scrollbar_fg_color;
+  background-image: -gtk-gradient (linear, left top, right top, color-stop (0, @scrollbar_controls_normal_1), color-stop (0.5, @scrollbar_controls_normal_2), color-stop (1, @scrollbar_controls_normal_3));
+  border-color: @scrollbar_controls_border_normal;
+  box-shadow: -1px 0 @scrollbar_controls_border_normal, 1px 0 @scrollbar_controls_border_normal; }
+
+scrollbar.horizontal slider, scrollbar.horizontal .slider,
+scrollbar.horizontal button, scrollbar.horizontal .button {
+  color: @scrollbar_fg_color;
+  background-image: -gtk-gradient (linear, left top, left bottom, color-stop (0, @scrollbar_controls_normal_1), color-stop (0.5, @scrollbar_controls_normal_2), color-stop (1, @scrollbar_controls_normal_3));
+  border-color: @scrollbar_controls_border_normal;
+  box-shadow: 0 -1px @scrollbar_controls_border_normal, 0 1px @scrollbar_controls_border_normal; }
+
+scrollbar.vertical button.up, scrollbar.vertical .button.up {
+  box-shadow: -1px 0 @scrollbar_controls_border_normal, 1px 0 @scrollbar_controls_border_normal, -1px -1px @scrollbar_controls_border_normal, 1px -1px @scrollbar_controls_border_normal;
+  border-style: none; }
+  scrollbar.vertical button.up:not(:disabled), scrollbar.vertical .button.up:not(:disabled) {
+    border-bottom: 1px solid @scrollbar_controls_border_normal; }
+scrollbar.vertical button.down, scrollbar.vertical .button.down {
+  box-shadow: -1px 0 @scrollbar_controls_border_normal, 1px 0 @scrollbar_controls_border_normal, -1px 1px @scrollbar_controls_border_normal, 1px 1px @scrollbar_controls_border_normal;
+  border-style: none; }
+  scrollbar.vertical button.down:not(:disabled), scrollbar.vertical .button.down:not(:disabled) {
+  border-top: 1px solid @scrollbar_controls_border_normal; }
+
+scrollbar.horizontal button.up, scrollbar.horizontal .button.up {
+  box-shadow: 0 -1px @scrollbar_controls_border_normal, 0 1px @scrollbar_controls_border_normal, -1px -1px @scrollbar_controls_border_normal, -1px 1px @scrollbar_controls_border_normal;
+  border-style: none; }
+  scrollbar.horizontal button.up:not(:disabled), scrollbar.horizontal .button.up:not(:disabled) {
+    border-right: 1px solid @scrollbar_controls_border_normal; }
+scrollbar.horizontal button.down, scrollbar.horizontal .button.down {
+  box-shadow: 0 -1px @scrollbar_controls_border_normal, 0 1px @scrollbar_controls_border_normal, 1px -1px @scrollbar_controls_border_normal, 1px 1px @scrollbar_controls_border_normal;
+  border-style: none; }
+  scrollbar.horizontal button.down:not(:disabled), scrollbar.horizontal .button.down:not(:disabled) {
+    border-left: 1px solid @scrollbar_controls_border_normal; }
+
+scrollbar button:disabled, scrollbar .button:disabled {
+  color: mix(@scrollbar_bg_color, #888888, 0.9); }

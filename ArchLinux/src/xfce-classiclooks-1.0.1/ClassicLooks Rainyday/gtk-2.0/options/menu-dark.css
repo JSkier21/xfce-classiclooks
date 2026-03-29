@@ -1,0 +1,38 @@
+/**************************************************************************************
+This file is distributed under the GNU General Public License version 2 (a.k.a. GPL-v2)
+(c) 2019-2021 Virgil Mager - vvmager@gmail.com
+(c) 2019-2021 Information Technology Group - http://itgroup.ro
+**************************************************************************************/
+
+style "menu" {
+	bg[NORMAL] = @dark_bg_color
+	fg[NORMAL] = shade(0.95, @dark_fg_color)
+	fg[PRELIGHT] = @selected_focused_fg_color
+	engine "murrine"
+	{
+		contrast = 0.7
+	}
+}
+
+style "menu_item" {
+	fg[NORMAL] = @dark_fg_color
+	fg[INSENSITIVE] = shade(0.5, @dark_fg_color)
+	text[NORMAL] = shade(0.95, @dark_fg_color)
+	text[PRELIGHT] = shade(0.95, @selected_focused_fg_color)
+}
+
+style "combo_menu_item" {
+	text[NORMAL]        = @dark_fg_color
+	text[PRELIGHT]      = @selected_focused_fg_color
+	text[SELECTED]      = @selected_focused_fg_color
+	text[ACTIVE]        = @dark_fg_color
+	text[INSENSITIVE]   = shade(0.5, @dark_fg_color)
+}
+
+style "separator_menu_item" {
+	bg[NORMAL] = shade(1.0, @dark_bg_color)
+	GtkWidget::separator-height = 5
+	engine "murrine" {
+		contrast =1.3
+	}
+}

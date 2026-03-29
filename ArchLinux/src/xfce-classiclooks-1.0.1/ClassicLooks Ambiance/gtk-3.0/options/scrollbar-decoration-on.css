@@ -1,0 +1,18 @@
+/**************************************************************************************
+This file is distributed under the GNU General Public License version 2 (a.k.a. GPL-v2)
+(c) 2019-2021 Virgil Mager - vvmager@gmail.com
+(c) 2019-2021 Information Technology Group - http://itgroup.ro
+**************************************************************************************/
+
+scrollbar.vertical slider, scrollbar.vertical .slider {
+  background-image: url("../assets/extras/scrollbar-handle-vert.png"), -gtk-gradient (linear, left top, right top, color-stop (0, @scrollbar_controls_normal_1), color-stop (0.5, @scrollbar_controls_normal_2), color-stop (1, @scrollbar_controls_normal_3));
+  background-repeat: no-repeat;
+  background-position: center; }
+  scrollbar.vertical slider:hover, scrollbar.vertical .slider:hover {
+    background-image: url("../assets/extras/scrollbar-handle-vert.png"), -gtk-gradient (linear, left top, right top, color-stop (0, @scrollbar_controls_hover_1), color-stop (0.5, @scrollbar_controls_hover_2), color-stop (1, @scrollbar_controls_hover_3)); }
+scrollbar.horizontal slider, scrollbar.horizontal .slider {
+  background-image: url("../assets/extras/scrollbar-handle-horiz.png"), -gtk-gradient (linear, left top, left bottom, color-stop (0, @scrollbar_controls_normal_1), color-stop (0.5, @scrollbar_controls_normal_2), color-stop (1, @scrollbar_controls_normal_3));
+  background-repeat: no-repeat;
+  background-position: center; }
+  scrollbar.horizontal slider:hover, scrollbar.horizontal .slider:hover {
+    background-image: url("../assets/extras/scrollbar-handle-horiz.png"), -gtk-gradient (linear, left top, left bottom, color-stop (0, @scrollbar_controls_hover_1), color-stop (0.5, @scrollbar_controls_hover_2), color-stop (1, @scrollbar_controls_hover_3)); }

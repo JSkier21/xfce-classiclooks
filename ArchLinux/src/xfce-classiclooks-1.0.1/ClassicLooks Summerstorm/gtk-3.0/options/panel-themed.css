@@ -1,0 +1,17 @@
+/**************************************************************************************
+This file is distributed under the GNU General Public License version 2 (a.k.a. GPL-v2)
+(c) 2019-2021 Virgil Mager - vvmager@gmail.com
+(c) 2019-2021 Information Technology Group - http://itgroup.ro
+**************************************************************************************/
+
+@import url("panel-contrast.css");
+
+/* change formulas in "panel-contrast.css" with @shift_bg_color to @selected_bg_color for checked/active and hover */
+
+.xfce4-panel.background button:checked, .xfce4-panel.background button:active {
+  border-color: mix(#222222, @selected_bg_color, 0.5);
+  border-top-color: mix(#111111, @selected_bg_color, 0.6);
+  background-image: linear-gradient(to bottom, mix(#cccccc, @selected_bg_color, 0.6), mix(#aaaaaa, @selected_bg_color, 0.6) 50%, mix(#777777, @selected_bg_color, 0.6)); }
+  .xfce4-panel.background button:checked:hover, .xfce4-panel.background button:active:hover {
+    background-image: linear-gradient(to bottom, mix(#e0e0e0, @selected_bg_color, 0.6), mix(#c0c0c0, @selected_bg_color, 0.6) 50%, mix(#909090, @selected_bg_color, 0.6)); }
+

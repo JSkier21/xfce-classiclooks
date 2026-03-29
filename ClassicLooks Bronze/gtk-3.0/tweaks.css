@@ -24,8 +24,8 @@
 @import "options/scrollbar-controls-contrast.css";
 @import "options/scrollbar-decoration-off.css";
 @import "options/pane-separator-auto.css";
-@import "options/menu-separator-light.css";
-@import "options/menu-selection-flat.css";
+@import "options/menu-separator-dented.css";
+@import "options/menu-selection-bulged-slight.css";
 @import "options/menu-themed.css";
 @import "options/tab-button.css";
 @import "options/panel-contrast.css";

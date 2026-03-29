@@ -2,7 +2,7 @@
 # Contributor: Virgil Mager <vvmager@gmail.com> (original author)
 
 pkgname=classiclooks-theme
-pkgver=1.0.1
+pkgver=1.0.2
 pkgrel=1
 pkgdesc="ClassicLooks GTK2/3/4, Qt4/5/6, and GNOME Shell 45-49 classic theme for XFCE and GNOME"
 arch=('any')
@@ -19,7 +19,7 @@ optdepends=(
     'elementary-xfce-icons: recommended icon set'
 )
 source=("$pkgname-$pkgver.tar.gz::https://github.com/JSkier21/xfce-classiclooks/archive/refs/tags/v${pkgver}.tar.gz")
-sha256sums=('ca3de39e671818fe41121197259cff82e84b5a6fbf3f106cee5dc8aa47ffbbbe')
+sha256sums=('SKIP')
 
 package() {
     cd "$srcdir/xfce-classiclooks-$pkgver"

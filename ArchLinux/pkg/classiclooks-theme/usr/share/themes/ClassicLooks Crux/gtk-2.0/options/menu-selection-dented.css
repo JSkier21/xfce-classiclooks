@@ -1,0 +1,24 @@
+/**************************************************************************************
+This file is distributed under the GNU General Public License version 2 (a.k.a. GPL-v2)
+(c) 2019-2021 Virgil Mager - vvmager@gmail.com
+(c) 2019-2021 Information Technology Group - http://itgroup.ro
+**************************************************************************************/
+
+style "menu_item" {
+	engine "murrine"
+	{
+		border_shades = { 0.95, 0.95 }
+		gradient_shades = { 0.98, 1.0, 1.0, 1.12 }
+		border_shades = { 0.95, 1.0 }
+		gradient_shades = { 1.0, 1.1, 1.1, 1.25 }
+	}
+}
+
+include "menubar-selection-rounded.css"
+style "menubar_item" {
+	engine "murrine"
+	{
+		border_shades = { 1.0, 1.0 }
+		gradient_shades = { 0.98, 1.0, 1.0, 1.1 }
+	}
+}

@@ -1,0 +1,15 @@
+csd-base-prelight
+=================
+small:
+  background: white 50% down full, black 15% up half
+  borders: 20% black
+  top corner pixels: outer 3%, inner 7% black
+large:
+  background: white 40% down full, black 15% up half
+  borders: 20% black
+  top corner pixels: last border pixeels 15% white, inner 15% black
+  bottom corner pixels: last border pixels 15% white
+
+titlebar buttons (dark color)
+=============================
+active/inactive: 202020:70/202020:45

@@ -1,0 +1,8 @@
+/* XPM */
+static char * xpm[] = {
+"7 2 3 1",
+" 	c None",
+".	c #939393 s active_color_1",
+"@	c #eeeeee s active_color_2",
+".@@@@@@",
+".@@@@@@"};

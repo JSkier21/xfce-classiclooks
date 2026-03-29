@@ -1,0 +1,36 @@
+/**************************************************************************************
+This file is distributed under the GNU General Public License version 2 (a.k.a. GPL-v2)
+(c) 2019-2021 Virgil Mager - vvmager@gmail.com
+(c) 2019-2021 Information Technology Group - http://itgroup.ro
+**************************************************************************************/
+
+modelbutton.flat,
+.menuitem.button.flat {
+  padding-left: 5px;
+  padding-right: 5px; }
+
+modelbutton.flat:hover,
+.menuitem.button.flat:hover,
+/*menubar > menuitem:hover,
+.menubar > menuitem:hover,*/
+menu menuitem:hover,
+.menu menuitem:hover,
+.context-menu menuitem:hover {
+  border-color: shade(@selected_bg_color, 0.77);
+}
+/*menubar > menuitem:hover,
+  .menubar > menuitem:hover {
+    box-shadow: inset 1px 1px shade(@selected_bg_color, 0.8), inset -1px 0 shade(@selected_bg_color, 0.85); }*/
+/*
+menu,
+.menu,
+.context-menu {
+  padding-top: 1px;
+  padding-bottom: 1px; }
+
+menu menuitem,
+.menu menuitem,
+.context-menu menuitem {
+  margin-left: 1px;
+  margin-right: 1px; }
+*/

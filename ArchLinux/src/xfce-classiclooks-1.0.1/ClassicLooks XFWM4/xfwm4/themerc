@@ -1,0 +1,36 @@
+#########################################################################################
+# This file is distributed under the GNU General Public License version 2 (a.k.a. GPL-v2)
+# ClassicLooks XFWM4 theme is based on Greybird XFWM4 theme
+# (c) 2019-2020 Virgil Mager - vvmager@gmail.com
+# (c) 2019-2020 Information Technology Group - http://itgroup.ro
+#########################################################################################
+
+# Author of original metacity theme: elementart Art Team
+# Author: Simon Steinbeiß <simon.steinbeiss@elfenbeinturm.at>
+# Modified by: Marcelo Aguero <marceloaguero@gmail.com>
+# Modified again by: Simon Steinbeiß <simon.steinbeiss@elfenbeinturm.at>
+# Modified again by: Ramon Kaes <ramon.kaes@gmail.com>
+# Modified again by: Virgil Mager <vvmager@gmail.com>
+
+#active_text_color=active_text_color_2
+active_text_shadow_color=active_hilight_2
+#inactive_text_color=inactive_text_color_2
+inactive_text_shadow_color=inactive_hilight_2
+title_shadow_active=true
+title_shadow_inactive=true
+
+full_width_title=true
+title_vertical_offset_active=2
+title_vertical_offset_inactive=2
+button_offset=0
+button_spacing=1
+maximized_offset=0
+
+shadow_delta_y=-8
+shadow_delta_x=0
+shadow_delta_height=2
+shadow_delta_width=0
+shadow_opacity=35
+
+show_app_icon=true
+button_layout=O|HMC

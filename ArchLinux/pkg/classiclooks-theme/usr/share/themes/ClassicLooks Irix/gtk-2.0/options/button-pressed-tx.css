@@ -1,0 +1,42 @@
+/**************************************************************************************
+This file is distributed under the GNU General Public License version 2 (a.k.a. GPL-v2)
+(c) 2019-2021 Virgil Mager - vvmager@gmail.com
+(c) 2019-2021 Information Technology Group - http://itgroup.ro
+**************************************************************************************/
+
+style "button" = "default" {
+	xthickness = 3
+	ythickness = 4
+
+	bg[NORMAL] = shade(0.96, mix(00.30, @shift_bg_color, @bg_color))
+   bg[ACTIVE] = mix(0.7, mix(0.45, "#ffffff", @selected_bg_color), mix(0.2, "#000000", mix(00.30, @shift_bg_color, @bg_color)))
+#	fg[ACTIVE] = "#ffffff"
+#	bg[ACTIVE] = shade(1.09, mix(00.30, @shift_bg_color, @bg_color))
+	fg[INSENSITIVE] = shade(0.55, mix(00.30, @shift_bg_color, @bg_color)) # works only in Qt
+	bg[INSENSITIVE] = shade(0.96, mix(00.30, @shift_bg_color, @bg_color))
+	bg[PRELIGHT] = mix(0.15, "#fffefe", mix(00.30, @shift_bg_color, @bg_color))
+#	bg[PRELIGHT] = shade(1.0, mix(0.25, @bg_color, mix(00.30, @shift_bg_color, @bg_color)))
+#	bg[PRELIGHT] = shade(1.02, mix(00.30, @shift_bg_color, @bg_color))
+#	bg[PRELIGHT] = shade(1.0, mix(0.1, "#ffffff", mix(00.30, @shift_bg_color, @bg_color)))
+#	bg[PRELIGHT] = shade(1.9, mix(0.06, "#ffffff", shade(0.5, mix(00.30, @shift_bg_color, @bg_color))))
+	engine "murrine" {
+#		contrast = 1.0
+		border_shades = {1.05, 0.93}
+		gradient_shades = {1.1, 1.05, 1.05, 0.95}
+		textstyle = 1
+		text_shade = 1.08
+		glowstyle = 0
+#		glow_shade = 1.1
+#		focusstyle = 1
+	}
+}
+
+style "toolbar_button" = "button" {
+	xthickness = 5
+	ythickness = 5
+   bg[ACTIVE] = mix(0.7, mix(0.45, "#ffffff", @selected_bg_color), mix(0.2, "#000000", mix(00.30, @shift_bg_color, @bg_color)))
+	bg[PRELIGHT] = shade(0.97, mix(0.25, @bg_color, mix(00.30, @shift_bg_color, @bg_color)))
+	engine "murrine" {
+	}
+}
+

@@ -1,0 +1,64 @@
+# Maintainer: Jeremy MountainJohnson <jskier@gmail.com>
+# Contributor: Virgil Mager <vvmager@gmail.com> (original author)
+
+pkgname=classiclooks-theme
+pkgver=1.0.1
+pkgrel=1
+pkgdesc="ClassicLooks GTK2/3/4, Qt4/5/6, and GNOME Shell 45-49 classic theme for XFCE and GNOME"
+arch=('any')
+url="https://github.com/JSkier21/xfce-classiclooks"
+license=('GPL-2.0-only')
+depends=('gtk-engine-murrine')
+optdepends=(
+    'qt5-styleplugins: Qt4/5 theming (set QT_QPA_PLATFORMTHEME=gtk2)'
+    'qt6ct: Qt6 theming (set QT_QPA_PLATFORMTHEME=qt6ct)'
+    'gnome-shell: GNOME Shell theming (requires User Themes extension)'
+    'gnome-shell-extension-user-themes: apply GNOME Shell theme without root'
+    'nemo: recommended file manager'
+    'noto-fonts: recommended fonts'
+    'elementary-xfce-icons: recommended icon set'
+)
+source=("$pkgname-$pkgver.tar.gz::https://github.com/JSkier21/xfce-classiclooks/archive/refs/tags/v${pkgver}.tar.gz")
+sha256sums=('SKIP')
+
+package() {
+    cd "$srcdir/xfce-classiclooks-$pkgver"
+
+    # Install all ClassicLooks theme directories to /usr/share/themes
+    install -d "$pkgdir/usr/share/themes"
+    for dir in ClassicLooks*/; do
+        dir="${dir%/}"
+        # Skip the ArchLinux packaging directory
+        [[ "$dir" == "ArchLinux" ]] && continue
+        cp -r "$dir" "$pkgdir/usr/share/themes/"
+    done
+
+    # Install Qt6 QSS stylesheet system-wide for qt6ct
+    install -Dm644 "ClassicLooks/TOOLS/QT/classiclooks-qt6.qss" \
+        "$pkgdir/usr/share/qt6ct/qss/classiclooks-qt6.qss"
+
+    # Install Qt5 font fix for fontconfig
+    install -Dm644 "ClassicLooks/TOOLS/SETUP/lib/90-classiclooks_qt5fontfix.conf" \
+        "$pkgdir/usr/share/fontconfig/conf.avail/90-classiclooks_qt5fontfix.conf"
+}
+
+post_install() {
+    echo ""
+    echo "ClassicLooks theme installed to /usr/share/themes/"
+    echo ""
+    echo "To apply the theme:"
+    echo "  XFCE:  Settings -> Appearance -> Themes -> select a ClassicLooks variant"
+    echo "  GNOME: Install 'gnome-shell-extension-user-themes', then use GNOME Tweaks"
+    echo ""
+    echo "For Qt4/5 theming, add to your shell profile:"
+    echo "  export QT_QPA_PLATFORMTHEME=gtk2"
+    echo ""
+    echo "For Qt6 theming:"
+    echo "  1. Run: qt6ct"
+    echo "  2. Set Style to 'Fusion' and add classiclooks-qt6.qss as a stylesheet"
+    echo "  3. Add to your shell profile: export QT_QPA_PLATFORMTHEME=qt6ct"
+    echo ""
+    echo "To enable the Qt5 font fix:"
+    echo "  ln -s /usr/share/fontconfig/conf.avail/90-classiclooks_qt5fontfix.conf \\"
+    echo "        /etc/fonts/conf.d/"
+}
