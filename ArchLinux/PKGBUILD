@@ -19,7 +19,7 @@ optdepends=(
     'elementary-xfce-icons: recommended icon set'
 )
 source=("$pkgname-$pkgver.tar.gz::https://github.com/JSkier21/xfce-classiclooks/archive/refs/tags/v${pkgver}.tar.gz")
-sha256sums=('SKIP')
+sha256sums=('ca3de39e671818fe41121197259cff82e84b5a6fbf3f106cee5dc8aa47ffbbbe')
 
 package() {
     cd "$srcdir/xfce-classiclooks-$pkgver"
