@@ -1,0 +1,16 @@
+/**************************************************************************************
+This file is distributed under the GNU General Public License version 2 (a.k.a. GPL-v2)
+(c) 2019-2021 Virgil Mager - vvmager@gmail.com
+(c) 2019-2021 Information Technology Group - http://itgroup.ro
+**************************************************************************************/
+
+@define-color scrollbar_controls_normal_1 mix(@bg_color, @shift_bg_color, 00.30);
+@define-color scrollbar_controls_normal_2 mix(@bg_color, @shift_bg_color, 00.30);
+@define-color scrollbar_controls_normal_3 mix(@bg_color, @shift_bg_color, 00.30);
+@define-color scrollbar_controls_hover_1 shade(mix(@bg_color, @shift_bg_color, 00.30), 1.07);
+@define-color scrollbar_controls_hover_2 shade(mix(@bg_color, @shift_bg_color, 00.30), 1.07);
+@define-color scrollbar_controls_hover_3 shade(mix(@bg_color, @shift_bg_color, 00.30), 1.07);
+
+@define-color scrollbar_controls_border_normal mix(#afafaf, @shift_bg_color, 00.30);
+@define-color scrollbar_controls_border_hover mix(#afafaf, @shift_bg_color, 00.30);
+

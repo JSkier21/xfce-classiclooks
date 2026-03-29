@@ -9,6 +9,9 @@ apt -y install gtk2-engines-murrine
 # install qt5 style plugins (qt5+)
 apt -y install qt5-style-plugins
 
+# install qt6ct for qt6 theming support
+apt -y install qt6ct
+
 # install Nemo FM
 echo
 if [ "$(exec_input "Install/update optional 'Nemo' file manager (y/N)?" y n)" == "y" ]

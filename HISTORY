@@ -3,6 +3,16 @@
 - odd minor versions (m.2k+1.r) represent development releases
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
+1.0.1
+=====
+- forked and maintained by Jeremy MountainJohnson (jskier@gmail.com)
+- added GTK4 (gtk-4.0) theme support for all 17 theme variants
+- added GNOME Shell 45-49 theme support for all 17 theme variants
+- added Qt6 theming via qt6ct with ClassicLooks QSS stylesheet
+- updated Qt4/5/6 install dependencies across all supported distros
+- updated install documentation for GTK4 and Qt6 setup
+- provided Arch Linux PKGBUILD
+
 2.2.0
 =====
 - hack for nautilus' pathbar when window switches normal/backdrop states

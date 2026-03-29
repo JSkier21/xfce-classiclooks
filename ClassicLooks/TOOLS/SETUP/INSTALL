@@ -5,12 +5,15 @@
 DEPENDENCIES
 ============
 - Gtk2 styling requires the Gtk2 'murrine' engine package, installation instructions below
-- Gtk styling of Qt5.7+ requires the 'Qt5 style plugins' package, installation instructions below
+- Gtk styling of Qt4/5.7+ requires the 'Qt5 style plugins' package, installation instructions below
+- Gtk4 styling is built into Gtk4 (no additional package required)
+- Qt6 theming requires the 'qt6ct' package, installation instructions below
 
 System patches
 --------------
-- Qt5.x apps require the environment variable QT_QPA_PLATFORMTHEME to be set to gtk2 in order for them to pick up the gtk2 theme; the lines containing '#classiclooks' in the install/uninstall instructions below will apply/undo a fix for this issue
+- Qt4/5.x apps require the environment variable QT_QPA_PLATFORMTHEME to be set to gtk2 in order for them to pick up the gtk2 theme; the lines containing '#classiclooks' in the install/uninstall instructions below will apply/undo a fix for this issue
 - Qt5.x apps, at least up to Qt5.10, may produce distorted fonts on some systems (see https://bugreports.qt.io/browse/QTBUG-56809); the lines containing 'conf.d' in the install/uninstall instructions below will apply/undo a fix for this issue which will work on most modern Xfce systems (spcecifically, on systems which use a typical CRT or LCD screen and which use the default Xfce font hinting 'slight' or 'medium')
+- Qt6.x apps require the environment variable QT_QPA_PLATFORMTHEME to be set to qt6ct; the install script configures qt6ct with the ClassicLooks QSS stylesheet automatically. Note: if you want BOTH Qt4/5 and Qt6 theming, you will need to set QT_QPA_PLATFORMTHEME=qt6ct (qt6ct also supports Qt5 as a fallback on most systems)
 
 Recommends
 ----------
@@ -41,17 +44,24 @@ Manually install system patches
 -------------------------------
 To "manually" install/update the 'ClassicLooks'-specific system patches for your own user (including dependencies), REPLACE step (3) above with the following:
 
-3a) Install/update the 'gtk2 murrine engine' and 'qt5 style plugings' dependencies by using your package manager:
+3a) Install/update the 'gtk2 murrine engine', 'qt5 style plugins', and 'qt6ct' dependencies by using your package manager:
   - e.g. for Ubuntu (and most Ubuntu-based distros):
-    apt install gtk2-engines-murrine qt5-style-plugins
-3b) Set the environment variable 'QT_QPA_PLATFORMTHEME' to the value 'gtk2' in ALL your shell initialization files (this setting is required for qt5+ applications to use the gtk2 theme), and mark this setting with '#classiclooks' hash-tag such that it can be easily identified and removed on uninstall:
+    apt install gtk2-engines-murrine qt5-style-plugins qt6ct
+3b) Set the environment variable 'QT_QPA_PLATFORMTHEME' to the value 'gtk2' in ALL your shell initialization files (this setting is required for qt4/5 applications to use the gtk2 theme), and mark this setting with '#classiclooks' hash-tag such that it can be easily identified and removed on uninstall:
   - e.g. if 'bash' is installed on your system then you will have to add the following line at the end of all bash initialiation files _WHICH ALREADY EXIST_ in your home directory (i.e. '~/.bash_profile' and/or '~/.bash_login' and/or '~/.profile'):
     export QT_QPA_PLATFORMTHEME=gtk2 #classiclooks
   - IMPORTANT: do _not_ create any new shell initialization files; instead, edit only the files that _already exist_ on your system
   - note: if QT_QPA_PLATFORMTHEME is already set to gtk2 (from a previous installation, or by a different applicatin), then leave unchanged
+  - note: for Qt6 theming, set QT_QPA_PLATFORMTHEME=qt6ct instead (qt6ct handles both Qt5 and Qt6 on most systems); see step 3d below
 3c) Apply the qt5 font fix patch:
     mkdir -p ~/.config/fontconfig/conf.d
     cp ~/.themes/'ClassicLooks'/TOOLS/SETUP/lib/90-classiclooks_qt5fontfix.conf ~/.config/fontconfig/conf.d/
+3d) Set up qt6ct for Qt6 theming (optional, required for Qt6 applications):
+    mkdir -p ~/.config/qt6ct/qss
+    cp ~/.themes/'ClassicLooks'/TOOLS/QT/classiclooks-qt6.qss ~/.config/qt6ct/qss/
+  - Then configure qt6ct (run 'qt6ct') to use style 'Fusion' with the 'classiclooks-qt6.qss' stylesheet
+  - Or to apply theming automatically to all Qt6 apps, set the environment variable:
+    export QT_QPA_PLATFORMTHEME=qt6ct #classiclooks
 
 Sub-themes
 ----------

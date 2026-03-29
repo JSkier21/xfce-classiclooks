@@ -16,6 +16,9 @@ sudo pacman -S --needed --noconfirm gtk-engine-murrine
 # install qt5 style plugins (qt5+)
 sudo pacman -S --needed --noconfirm qt5-styleplugins
 
+# install qt6ct for qt6 theming support
+sudo pacman -S --needed --noconfirm qt6ct
+
 # install Nemo FM
 echo
 if [ "$(exec_input "Install/update optional 'Nemo' file manager (y/N)?" y n)" == "y" ]

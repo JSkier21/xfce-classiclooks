@@ -9,6 +9,9 @@ sudo dnf -y install gtk-murrine-engine
 # install qt5 style plugins (qt5+)
 sudo dnf -y install qt5-qtstyleplugins
 
+# install qt6ct for qt6 theming support
+sudo dnf -y install qt6ct
+
 # install Nemo FM
 echo
 if [ "$(exec_input "Install/update optional 'Nemo' file manager (y/N)?" y n)" == "y" ]
