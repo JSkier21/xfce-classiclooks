@@ -3,6 +3,12 @@
 - odd minor versions (m.2k+1.r) represent development releases
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
+1.0.3
+=====
+- added XFCE4 dark panel mode support: gtk-dark.css created for all 17 theme
+  variants, enabling "Prefer dark theme" in XFCE4 Panel Preferences to apply
+  a dark colour palette (bg #3a3a3a, fg #e8e8e8) with per-theme accent colours
+
 1.0.2
 =====
 - fixed flat appearance in 10 themes (ClassicLooks, Bronze, Crux, Devilsclaw, Graphite,

@@ -2,9 +2,9 @@
 # Contributor: Virgil Mager <vvmager@gmail.com> (original author)
 
 pkgname=classiclooks-theme
-pkgver=1.0.2
+pkgver=1.0.3
 pkgrel=1
-pkgdesc="ClassicLooks GTK2/3/4, Qt4/5/6, and GNOME Shell 45-49 classic theme for XFCE and GNOME"
+pkgdesc="ClassicLooks GTK2/3/4, Qt4/5/6, GNOME Shell 45-49, and XFCE4 dark panel classic theme"
 arch=('any')
 url="https://github.com/JSkier21/xfce-classiclooks"
 license=('GPL-2.0-only')
