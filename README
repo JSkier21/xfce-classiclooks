@@ -1,3 +1,5 @@
+Everything below was quickly put together, and primariy based upon the work of Virgil Mager, and their xfce-classiclooks theme set. 
+
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 ~ This file last changed in version 1.0.2 ~
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -19,9 +21,9 @@ ClassicLooks relies upon, and/or is derived from:
 
 INSTALL/UNINSTALL
 =================
-The 'ClassicLooks' theme requires several dependencies to be installed, and it includes fixes for Qt applications running on XFCE and/or which use Gtk styling. For a proper installation/uninstallation please FOLLOW ALL THE INSTALL/UNINSTALL STEPS described in file 'ClassicLooks/TOOLS/SETUP/INSTALL' in this archive, sections 'INSTALLATION' and 'UNINSTALL'.
+The 'ClassicLooks' theme requires several dependencies to be installed, and it includes fixes for Qt applications running on XFCE which use Gtk styling. For a proper installation/uninstallation please FOLLOW ALL THE INSTALL/UNINSTALL STEPS described in file 'ClassicLooks/TOOLS/SETUP/INSTALL' in this archive, sections 'INSTALLATION' and 'UNINSTALL'.
 
-Arch Linux users may instead install via the provided PKGBUILD in the 'ArchLinux/' directory.
+Arch Linux users may instead install via the provided PKGBUILD if so inclined.
 
 IMPORTANT
 ~~~~~~~~~
@@ -47,4 +49,4 @@ COPYRIGHT
 =========
 (c) 2019-2021 Virgil Mager - vvmager@gmail.com (original author)
 (c) 2019-2021 Information Technology Group - http://itgroup.ro (original author)
-(c) 2025 Jeremy MountainJohnson - jskier@gmail.com (fork maintainer)
+(c) 2026 Jeremy MountainJohnson - jskier@gmail.com (forked version)
